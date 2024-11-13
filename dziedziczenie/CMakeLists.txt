@@ -5,7 +5,12 @@ project(dziedziczenie LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(dziedziczenie main.cpp)
+add_executable(dziedziczenie main.cpp
+    Vehicle.h
+    Motorcycle.h
+    Car.h
+    Truck.h
+)
 
 include(GNUInstallDirs)
 install(TARGETS dziedziczenie
