@@ -13,15 +13,15 @@ int main()
     cout << endl;
 
     M1.setCapacity(500);
-    cout << "Motocykl " << M1.setBrand() << " jest to motocykl " << M1.setType()<< endl;
+    cout << "Motocykl " << M1.getBrand() << " jest to motocykl " << M1.getType()<< endl;
     cout << endl;
 
     C2.setNumberOfGears(6);
-    cout << "Samochod " << C2.setBrand() << " ma naped " << C2.setDrive() << endl;
+    cout << "Samochod " << C2.getBrand() << " ma naped " << C2.getDrive() << endl;
     cout << endl;
 
-    T3.set_cargo("Nawozy");
-    cout << "Tir " << T3.setBrand() << " ma maksymalny zaladunek " << T3.setCapacity() << endl;
+    T3.setCargo("Nawozy");
+    cout << "Tir " << T3.getBrand() << " ma maksymalny zaladunek " << T3.getCapacity() << endl;
     cout << endl;
 
     return 0;

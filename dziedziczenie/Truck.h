@@ -1,9 +1,10 @@
 #ifndef TRUCK_H
 #define TRUCK_H
 
+#include <iostream>
 #include "Car.h"
 
-class Truck : public Car{
+class Truck : public Car {
 protected:
     int numberOfWheels;
     std::string cargo;
@@ -12,30 +13,45 @@ private:
     std::string capacity;
 
 public:
-    Truck(std::string brand_, std::string model_, int productionYear_, int mileage_, std::string drive_, std::string body_, int numberOfGears_, int numberOfWheels_,  std::string cargo_, std::string capacity_)
-        : Car(brand_, model_, productionYear_, mileage_, drive_, body_, numberOfGears_),
+    Truck(
+        const std::string& brand_,
+        const std::string& model_,
+        const int productionYear_,
+        const int mileage_,
+        const std::string& drive_,
+        const std::string& body_,
+        const int numberOfGears_,
+        const int numberOfWheels_,
+        const std::string& cargo_,
+        const std::string& capacity_
+        ) : Car(brand_, model_, productionYear_, mileage_, drive_, body_, numberOfGears_),
         numberOfWheels(numberOfWheels_),
         cargo(cargo_),
-        capacity(capacity_){
-        std::cout << "Utworzona obiekt dla ciezarowki " << brand << " " << model << ", z zaladunkiem: " << cargo << std::endl;
+        capacity(capacity_)
+    {
+        std::cout << "Utworzono obiekt dla ciężarówki " << brand << " " << model << ", z ładunkiem: " << cargo << std::endl;
     }
 
-    void set_cargo(std::string nCargo){
+    void setCargo(const std::string& nCargo)
+    {
         cargo = nCargo;
-        std::cout << "Zmieniono typ zaladunku dla " << brand << " " << model << " na: " << cargo << std::endl;
+        std::cout << "Zmieniono typ ładunku dla " << brand << " " << model << " na: " << cargo << std::endl;
     }
 
-    void set_capacity(std::string nCapacity){
+    void setCapacity(const std::string& nCapacity)
+    {
         capacity = nCapacity;
-        std::cout << "Zmieniono ladownosc dla " << brand << " " << model << " na: " << cargo << std::endl;
+        std::cout << "Zmieniono ładowność dla " << brand << " " << model << " na: " << capacity << std::endl;
     }
 
-    std::string setCapacity(){
+    std::string getCapacity() const
+    {
         return capacity;
     }
 
-    ~Truck(){
-        std::cout << "Destruktor dla ciezarowki " << brand << " " << model << std::endl;
+    ~Truck()
+    {
+        std::cout << "Destruktor dla ciężarówki " << brand << " " << model << std::endl;
     }
 };
 
