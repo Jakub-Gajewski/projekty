@@ -22,21 +22,21 @@ public:
         validateMileage(nMil);
     }
 
-    int getMileage() const
+    int getiMileage() const
     {
-        return mileage;
+        return iMileage;
     }
 
     std::string getBrand() const
     {
-        return brand;
+        return sBrand;
     }
 
     void setFuelLevel(int newFuelLevel)
     {
         validateFuelLevel(newFuelLevel);
-        fuelLevelInPercent = newFuelLevel;
-        std::cout << "Poziom paliwa w pojezdzie " << brand << " " << model << " zmieniony na: " << fuelLevelInPercent << "%" << std::endl;
+        iFuelLevelInPercent = newFuelLevel;
+        std::cout << "Poziom paliwa w pojezdzie " << sBrand << " " << sModel << " zmieniony na: " << iFuelLevelInPercent << "%" << std::endl;
     }
 
 protected:
@@ -51,24 +51,24 @@ protected:
     }
 
 private:
-    void validateMileage(int newMileage)
+    void validateMileage(int newiMileage)
     {
-        if (newMileage < mileage)
+        if (newiMileage < iMileage)
         {
             std::cerr << "Blad: Nowy przebieg nie moze byc mniejszy niz obecny!" << std::endl;
         }else
         {
-            mileage = newMileage;
-            std::cout << "Zmieniono przebieg dla " << brand << " " << model << " na: " << newMileage << std::endl;
+            iMileage = newiMileage;
+            std::cout << "Zmieniono przebieg dla " << sBrand << " " << sModel << " na: " << newiMileage << std::endl;
         }
     }
 
 protected:
-    std::string brand;
-    std::string model;
-    int productionYear;
-    int mileage;
-    int fuelLevelInPercent;
+    std::string sBrand;
+    std::string sModel;
+    int iProductionYear;
+    int iMileage;
+    int iFuelLevelInPercent;
 };
 
 #endif // VEHICLE_H

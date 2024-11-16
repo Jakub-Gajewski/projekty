@@ -7,59 +7,59 @@
 class Motorcycle : public Vehicle {
 public:
     Motorcycle(
-        const std::string& brand_,
-        const std::string& model_,
-        const int productionYear_,
-        const int mileage_,
-        const int fuelLevelInPercent_,
-        const std::string& type_,
-        const int engineCapacity_
+        const std::string& sBrand_,
+        const std::string& sModel_,
+        const int iProductionYear_,
+        const int iMileage_,
+        const int iFuelLevelInPercent_,
+        const std::string& sType_,
+        const int iEngineCapacity_
         ) : Vehicle(),
-        type(type_),
-        engineCapacity(engineCapacity_)
+        sType(sType_),
+        iEngineCapacity(iEngineCapacity_)
     {
-        brand = brand_;
-        model = model_;
-        productionYear = productionYear_;
-        mileage = mileage_;
-        fuelLevelInPercent = fuelLevelInPercent_;
+        sBrand = sBrand_;
+        sModel = sModel_;
+        iProductionYear = iProductionYear_;
+        iMileage = iMileage_;
+        iFuelLevelInPercent = iFuelLevelInPercent_;
 
-        std::cout << "Utworzono obiekt dla motocyklu " << brand << " " << model << ", o pojemnosci silnika " << engineCapacity << "cc" << std::endl;
+        std::cout << "Utworzono obiekt dla motocyklu " << sBrand << " " << sModel << ", o pojemnosci silnika " << iEngineCapacity << "cc" << std::endl;
     }
 
     ~Motorcycle()
     {
-        std::cout << "Destruktor dla motocyklu " << brand << " " << model << std::endl;
+        std::cout << "Destruktor dla motocyklu " << sBrand << " " << sModel << std::endl;
     }
 
     void displayInfo() override
     {
-        std::cout << "Motocykl " << brand << " " << model << " (" << productionYear << "), pojemnosc silnika: "
-                  << engineCapacity << "cc, przebieg: " << mileage << " km, poziom paliwa: " << fuelLevelInPercent << "%" << std::endl;
+        std::cout << "Motocykl " << sBrand << " " << sModel << " (" << iProductionYear << "), pojemnosc silnika: "
+                  << iEngineCapacity << "cc, przebieg: " << iMileage << " km, poziom paliwa: " << iFuelLevelInPercent << "%" << std::endl;
     }
 
     std::string getType() const
     {
-        return type;
+        return sType;
     }
 
     int getEngineCapacity() const
     {
-        return engineCapacity;
+        return iEngineCapacity;
     }
 
 protected:
     void logMaintenance() override
     {
-        std::cout << "Logowanie serwisowania motocykla: " << brand << " " << model << std::endl;
+        std::cout << "Logowanie serwisowania motocykla: " << sBrand << " " << sModel << std::endl;
     }
 
 
 protected:
-    std::string type;
+    std::string sType;
 
 private:
-    int engineCapacity;
+    int iEngineCapacity;
 };
 
 #endif // MOTORCYCLE_H

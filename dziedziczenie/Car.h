@@ -7,60 +7,60 @@
 class Car : public Vehicle {
 public:
     Car(
-        const std::string& brand_,
-        const std::string& model_,
-        const int productionYear_,
-        const int mileage_,
-        const int fuelLevelInPercent_,
-        const std::string& drive_,
-        const std::string& body_,
-        const int numberOfGears_
+        const std::string& sBrand_,
+        const std::string& sModel_,
+        const int iProductionYear_,
+        const int iMileage_,
+        const int iFuelLevelInPercent_,
+        const std::string& sDrive_,
+        const std::string& sBody_,
+        const int iNumberOfGears_
         ) : Vehicle(),
-        drive(drive_),
-        body(body_),
-        numberOfGears(numberOfGears_)
+        sDrive(sDrive_),
+        sBody(sBody_),
+        iNumberOfGears(iNumberOfGears_)
     {
-        brand = brand_;
-        model = model_;
-        productionYear = productionYear_;
-        mileage = mileage_;
-        fuelLevelInPercent = fuelLevelInPercent_;
+        sBrand = sBrand_;
+        sModel = sModel_;
+        iProductionYear = iProductionYear_;
+        iMileage = iMileage_;
+        iFuelLevelInPercent = iFuelLevelInPercent_;
 
-        std::cout << "Utworzona obiekt dla samochodu " << brand << " " << model << ", o nadwoziu " << body << std::endl;
+        std::cout << "Utworzona obiekt dla samochodu " << sBrand << " " << sModel << ", o nadwoziu " << sBody << std::endl;
     }
 
     ~Car() override
     {
-        std::cout << "Destruktor dla samochodu " << brand << " " << model << std::endl;
+        std::cout << "Destruktor dla samochodu " << sBrand << " " << sModel << std::endl;
     }
 
     void setNumberOfGears(const int nNum)
     {
         validateNumberOfGears(nNum);
-        numberOfGears = nNum;
-        std::cout << "Zmieniono ilosc biegow dla " << brand << " " << model << " na: " << numberOfGears << std::endl;
+        iNumberOfGears = nNum;
+        std::cout << "Zmieniono ilosc biegow dla " << sBrand << " " << sModel << " na: " << iNumberOfGears << std::endl;
     }
 
     std::string getDrive() const
     {
-        return drive;
+        return sDrive;
     }
 
     std::string getBody() const
     {
-        return body;
+        return sBody;
     }
 
     void displayInfo() override
     {
-        std::cout << "Samochod: " << brand << " " << model << ", rok: " << productionYear << ", przebieg: " << mileage << " km, naped: " << drive << ", nadwozie: " << body << ", liczba biegow: " << numberOfGears << std::endl;
+        std::cout << "Samochod: " << sBrand << " " << sModel << ", rok: " << iProductionYear << ", przebieg: " << iMileage << " km, naped: " << sDrive << ", nadwozie: " << sBody << ", liczba biegow: " << iNumberOfGears << std::endl;
     }
 
 protected:
 
     void logMaintenance() override
     {
-        std::cout << "Informacje o konserwacji: " << brand << " " << model << std::endl;
+        std::cout << "Informacje o konserwacji: " << sBrand << " " << sModel << std::endl;
     }
 
 private:
@@ -74,11 +74,11 @@ private:
     }
 
 protected:
-    std::string drive;
-    std::string body;
+    std::string sDrive;
+    std::string sBody;
 
 private:
-    int numberOfGears;
+    int iNumberOfGears;
 };
 
 

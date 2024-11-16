@@ -7,86 +7,86 @@
 class Truck : public Car {
 public:
     Truck(
-        const std::string& brand_,
-        const std::string& model_,
-        const int productionYear_,
-        const int mileage_,
-        const int fuelLevelInPercent_,
+        const std::string& sBrand_,
+        const std::string& sModel_,
+        const int iProductionYear_,
+        const int iMileage_,
+        const int iFuelLevelInPercent_,
         const std::string& drive_,
-        const std::string& body_,
-        const int numberOfGears_,
-        const int numberOfWheels_,
-        const std::string& cargo_,
-        const std::string& capacity_
-        ) : Car(brand_, model_, productionYear_, fuelLevelInPercent_, mileage_, drive_, body_, numberOfGears_),
-        numberOfWheels(numberOfWheels_),
-        cargo(cargo_),
-        capacity(capacity_)
+        const std::string& sBody_,
+        const int iNumberOfGears_,
+        const int iNumberOfWheels_,
+        const std::string& sCargo_,
+        const std::string& sCapacity_
+        ) : Car(sBrand_, sModel_, iProductionYear_, iFuelLevelInPercent_, iMileage_, drive_, sBody_, iNumberOfGears_),
+        iNumberOfWheels(iNumberOfWheels_),
+        sCargo(sCargo_),
+        sCapacity(sCapacity_)
     {
-        std::cout << "Utworzono obiekt dla ciezarowki " << brand << " " << model << ", z ladunkiem: " << cargo << std::endl;
+        std::cout << "Utworzono obiekt dla ciezarowki " << sBrand << " " << sModel << ", z ladunkiem: " << sCargo << std::endl;
     }
 
     ~Truck() override
     {
-        std::cout << "Destruktor dla ciezarowki " << brand << " " << model << std::endl;
+        std::cout << "Destruktor dla ciezarowki " << sBrand << " " << sModel << std::endl;
     }
 
-    void setCargo(const std::string& nCargo)
+    void setCargo(const std::string& nsCargo)
     {
-        cargo = nCargo;
-        std::cout << "Zmieniono typ ladunku dla " << brand << " " << model << " na: " << cargo << std::endl;
+        sCargo = nsCargo;
+        std::cout << "Zmieniono typ ladunku dla " << sBrand << " " << sModel << " na: " << sCargo << std::endl;
     }
 
-    void setCapacity(const std::string& nCapacity)
+    void setCapacity(const std::string& nsCapacity)
     {
-        capacity = nCapacity;
-        std::cout << "Zmieniono ladownosc dla " << brand << " " << model << " na: " << capacity << std::endl;
+        sCapacity = nsCapacity;
+        std::cout << "Zmieniono ladownosc dla " << sBrand << " " << sModel << " na: " << sCapacity << std::endl;
     }
 
     std::string getCapacity() const
     {
-        return capacity;
+        return sCapacity;
     }
 
     std::string getCargo() const
     {
-        return cargo;
+        return sCargo;
     }
 
     void displayInfo() override
     {
-        std::cout << "Ciezarowka: " << brand << " " << model << ", rok: " << productionYear
-                  << ", przebieg: " << mileage << " km, naped: " << drive << ", nadwozie: " << body
-                  << ", liczba kol: " << numberOfWheels << ", ladunek: " << cargo << ", ladownosc: " << capacity << std::endl;
+        std::cout << "Ciezarowka: " << sBrand << " " << sModel << ", rok: " << iProductionYear
+                  << ", przebieg: " << iMileage << " km, naped: " << sDrive << ", nadwozie: " << sBody
+                  << ", liczba kol: " << iNumberOfWheels << ", ladunek: " << sCargo << ", ladownosc: " << sCapacity << std::endl;
     }
 
 protected:
     void logTruckDetails() const
     {
-        std::cout << "Szczegoly ciezarowki: " << brand << " " << model
-                  << ", ladunek: " << cargo << ", ladownosc: " << capacity << std::endl;
+        std::cout << "Szczegoly ciezarowki: " << sBrand << " " << sModel
+                  << ", ladunek: " << sCargo << ", ladownosc: " << sCapacity << std::endl;
     }
 
 private:
     void logMaintenance() override
     {
-        std::cout << "Logowanie serwisowania ciezarowki: " << brand << " " << model << std::endl;
+        std::cout << "Logowanie serwisowania ciezarowki: " << sBrand << " " << sModel << std::endl;
     }
 
-    void validateCapacity(int capacity)
+    void validateCapacity(int sCapacity)
     {
-        if (capacity < 0)
+        if (sCapacity < 0)
         {
             std::cerr << "Bląd: ladownosc nie moze byc mniejsza niz 0!" << std::endl;
         }
     }
 
 protected:
-    int numberOfWheels;
-    std::string cargo;
+    int iNumberOfWheels;
+    std::string sCargo;
 
 private:
-    std::string capacity;
+    std::string sCapacity;
 };
 
 

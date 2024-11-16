@@ -1,5 +1,4 @@
 #include <iostream>
-#include "Vehicle.h"
 #include "Motorcycle.h"
 #include "Car.h"
 #include "Truck.h"
