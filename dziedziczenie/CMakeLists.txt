@@ -10,6 +10,12 @@ add_executable(dziedziczenie main.cpp
     Motorcycle.h
     Car.h
     Truck.h
+    Car.cpp
+    Vehicle.cpp
+    Truck.cpp
+    Motocycle.cpp
+    Car.h Car.cpp
+
 )
 
 include(GNUInstallDirs)

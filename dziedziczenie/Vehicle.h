@@ -5,63 +5,33 @@
 
 class Vehicle {
 public:
-    Vehicle()
-    {
-        std::cout << "Utworzony obiekt dla pojazdu" << std::endl;
-    }
+    Vehicle(
+        const std::string& sBrand_,
+        const std::string& sModel_,
+        const int iProductionYear_,
+        const int iMileage_,
+        const int iFuelLevelInPercent_
+        );
 
-    virtual ~Vehicle()
-    {
-        std::cout << "Destruktor dla pojazdu" << std::endl;
-    }
+    virtual ~Vehicle();
 
     virtual void displayInfo() = 0;
 
-    void setMileage(const int nMil)
-    {
-        validateMileage(nMil);
-    }
+    void setMileage(const int nMil);
 
-    int getiMileage() const
-    {
-        return iMileage;
-    }
+    int getMileage() const;
 
-    std::string getBrand() const
-    {
-        return sBrand;
-    }
+    std::string getBrand() const;
 
-    void setFuelLevel(int newFuelLevel)
-    {
-        validateFuelLevel(newFuelLevel);
-        iFuelLevelInPercent = newFuelLevel;
-        std::cout << "Poziom paliwa w pojezdzie " << sBrand << " " << sModel << " zmieniony na: " << iFuelLevelInPercent << "%" << std::endl;
-    }
+    void setFuelLevel(int newFuelLevel);
 
 protected:
-    virtual void logMaintenance() = 0; // Czemu to jest czysto wirtualne, zalezy od implementacji
+    virtual void logMaintenance() = 0;
 
-    void validateFuelLevel(int newFuelLevel)
-    {
-        if (newFuelLevel < 0 || newFuelLevel > 100)
-        {
-            std::cerr << "Blad: Poziom paliwa musi byc w zakresie 0-100%" << std::endl;
-        }
-    }
+    void validateFuelLevel(int newFuelLevel);
 
 private:
-    void validateMileage(int newiMileage)
-    {
-        if (newiMileage < iMileage)
-        {
-            std::cerr << "Blad: Nowy przebieg nie moze byc mniejszy niz obecny!" << std::endl;
-        }else
-        {
-            iMileage = newiMileage;
-            std::cout << "Zmieniono przebieg dla " << sBrand << " " << sModel << " na: " << newiMileage << std::endl;
-        }
-    }
+    void validateMileage(int newiMileage);
 
 protected:
     std::string sBrand;

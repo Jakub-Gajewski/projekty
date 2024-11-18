@@ -15,63 +15,25 @@ public:
         const std::string& sDrive_,
         const std::string& sBody_,
         const int iNumberOfGears_
-        ) : Vehicle(),
-        sDrive(sDrive_),
-        sBody(sBody_),
-        iNumberOfGears(iNumberOfGears_)
-    {
-        sBrand = sBrand_;
-        sModel = sModel_;
-        iProductionYear = iProductionYear_;
-        iMileage = iMileage_;
-        iFuelLevelInPercent = iFuelLevelInPercent_;
+        );
 
-        std::cout << "Utworzona obiekt dla samochodu " << sBrand << " " << sModel << ", o nadwoziu " << sBody << std::endl;
-    }
+    ~Car() ;
 
-    ~Car() override
-    {
-        std::cout << "Destruktor dla samochodu " << sBrand << " " << sModel << std::endl;
-    }
+    void setNumberOfGears(const int nNum);
 
-    void setNumberOfGears(const int nNum)
-    {
-        validateNumberOfGears(nNum);
-        iNumberOfGears = nNum;
-        std::cout << "Zmieniono ilosc biegow dla " << sBrand << " " << sModel << " na: " << iNumberOfGears << std::endl;
-    }
+    std::string getDrive() const;
 
-    std::string getDrive() const
-    {
-        return sDrive;
-    }
+    std::string getBody() const;
 
-    std::string getBody() const
-    {
-        return sBody;
-    }
-
-    void displayInfo() override
-    {
-        std::cout << "Samochod: " << sBrand << " " << sModel << ", rok: " << iProductionYear << ", przebieg: " << iMileage << " km, naped: " << sDrive << ", nadwozie: " << sBody << ", liczba biegow: " << iNumberOfGears << std::endl;
-    }
+    void displayInfo() override;
 
 protected:
 
-    void logMaintenance() override
-    {
-        std::cout << "Informacje o konserwacji: " << sBrand << " " << sModel << std::endl;
-    }
+    void logMaintenance() override;
 
 private:
 
-    void validateNumberOfGears(int num)
-    {
-        if (num < 1)
-        {
-            std::cerr << "Blad: Liczba biegow nie moze byc mniejsza niz 1!" << std::endl;
-        }
-    }
+    void validateNumberOfGears(int num);
 
 protected:
     std::string sDrive;
@@ -80,6 +42,5 @@ protected:
 private:
     int iNumberOfGears;
 };
-
 
 #endif // CAR_H
