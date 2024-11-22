@@ -5,7 +5,11 @@ project(abstrakcja LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(abstrakcja main.cpp)
+add_executable(abstrakcja main.cpp
+    figure.h figure.cpp
+    rectangle.h rectangle.cpp
+    square.h square.cpp
+    rightTriangle.h rightTriangle.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS abstrakcja

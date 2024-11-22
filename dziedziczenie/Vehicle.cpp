@@ -45,7 +45,7 @@ void Vehicle::setFuelLevel(int newFuelLevel)
 
 void Vehicle::validateFuelLevel(int newFuelLevel)
 {
-    if (newFuelLevel < 0 || newFuelLevel > 100)
+    if (newFuelLevel < 0 || (newFuelLevel > 100))
     {
         std::cerr << "Blad: Poziom paliwa musi byc w zakresie 0-100%" << std::endl;
     }
