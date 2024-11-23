@@ -2,49 +2,44 @@
 #include <iostream>
 
 Rectangle::Rectangle(
-    const double dSide1_,
-    const double dSide2_
-    ): dSide1(dSide1_),
-    dSide2(dSide2_)
+    double dSide1_,
+    double dSide2_
+    )
 {
-    std::cout << "Utworzono prostokat" << std::endl;
+    figureName = "Prostokat";
+    isPositive(dSide1_, dSide1);
+    isPositive(dSide2_, dSide2);
+    std::cout << "Utworzono prostokąt" << std::endl;
 }
 
 Rectangle::~Rectangle()
 {
-    std::cout << "Destruktor prostokata" << std::endl;
+    std::cout << "Destruktor prostokąta" << std::endl;
 }
 
 void Rectangle::setSides()
 {
-    std::cout << "Podaj 1 bok: " << std::endl;
+    std::cout << "Podaj 1 bok: ";
     std::cin >> dSide1;
-    std::cout << "Podaj 2 bok: " << std::endl;
+    isPositive(dSide1, dSide1);
+
+    std::cout << "Podaj 2 bok: ";
     std::cin >> dSide2;
+    isPositive(dSide2, dSide2);
 }
 
-void Rectangle::displaySides()
+void Rectangle::displaySides() const
 {
     std::cout << "Bok 1: " << dSide1 << std::endl;
     std::cout << "Bok 2: " << dSide2 << std::endl;
 }
 
-double Rectangle::calculateField()
-{
+double Rectangle::calculateField() {
     dField = dSide1 * dSide2;
     return dField;
 }
 
-double Rectangle::calculateCircuit()
-{
+double Rectangle::calculateCircuit() {
     dCircuit = 2 * dSide1 + 2 * dSide2;
     return dCircuit;
 }
-
-void Rectangle::displayFieldAndCircuit()
-{
-    std::cout << "Pole: " << dField << std::endl;
-    std::cout << "Obwod: " << dCircuit << std::endl;
-}
-
-

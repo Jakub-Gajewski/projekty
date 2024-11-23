@@ -4,25 +4,19 @@
 #include "figure.h"
 #include <iostream>
 
-class Rectangle : public Figure{
-
+class Rectangle : public Figure {
 public:
-    Rectangle(
-        const double dSide1_,
-        const double dSide2_
-        );
+    Rectangle(double dSide1_, double dSide2_);
 
-    ~Rectangle();
+    ~Rectangle() override;
 
     void setSides() override;
 
-    void displaySides() override;
+    void displaySides() const override;
 
     double calculateField() override;
 
     double calculateCircuit() override;
-
-    void displayFieldAndCircuit() override;
 
 protected:
     double dSide1 = 0.0, dSide2 = 0.0;

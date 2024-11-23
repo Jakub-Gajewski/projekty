@@ -1,25 +1,34 @@
 #include <iostream>
 #include <string>
-#include <cmath>
 #include "rectangle.h"
 #include "rightTriangle.h"
 #include "square.h"
+#include "figureFunction.h"
 
 using namespace std;
 
 int main()
 {
-    Rectangle t1(2.0, 4.0);
-    RightTriangle g2(5, 12, 14);
 
-    t1.displaySides();
-    cout << "Zmien dlugosci bokow" << endl;
-    t1.setSides();
-    t1.calculateCircuit();
-    t1.displayFieldAndCircuit();
-    cout << endl;
-    g2.displaySides();
-    g2.calculateField();
-    g2.displayFieldAndCircuit();
+    Rectangle rectangle(2.0, 4.0);
+    displayFigure(rectangle);
+
+    cout << "Zmienianie boków prostokąta..." << endl;
+    rectangle.setSides();
+    displayFigure(rectangle);
+
+    RightTriangle triangle(5.0, 12.0, 13.0);
+    displayFigure(triangle);
+
+    triangle.setSides();
+    displayFigure(triangle);
+
+    Square square(4.0);
+    displayFigure(square);
+
+    cout << "Zmienianie boków kwadratu..." << endl;
+    square.setSides();
+    displayFigure(square);
+
     return 0;
 }

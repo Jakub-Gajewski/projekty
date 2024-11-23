@@ -9,7 +9,8 @@ add_executable(abstrakcja main.cpp
     figure.h figure.cpp
     rectangle.h rectangle.cpp
     square.h square.cpp
-    rightTriangle.h rightTriangle.cpp)
+    rightTriangle.h rightTriangle.cpp
+    figureFunction.h figureFunction.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS abstrakcja

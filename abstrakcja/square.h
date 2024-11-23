@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include "figure.h"
-#include <cmath>
 
 class Square : public Figure{
 
@@ -14,7 +13,7 @@ public:
 
     void setSides() override;
 
-    void getSides() override;
+    void displaySides() override;
 
     double calculateField() override;
 

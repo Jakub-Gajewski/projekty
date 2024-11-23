@@ -17,15 +17,11 @@ public:
 
     void setSides() override;
 
-    void getSides() override;
+    void displaySides() override;
 
     double calculateField() override;
 
     double calculateCircuit() override;
-
-    void getField() override;
-
-    void getCircuit() override;
 
 private:
     int isTriangle(double dSide1, double dSide2, double dSide3);

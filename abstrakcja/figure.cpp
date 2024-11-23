@@ -11,15 +11,26 @@ Figure::~Figure()
     std::cout << "Destruktor figury" << std::endl;
 }
 
-Figure::getField()
+double Figure::getField() const
 {
     return dField;
 }
 
-
-Figure::getCircuit()
+double Figure::getCircuit() const
 {
     return dCircuit;
 }
+
+void isPositive(int number, int& variableName)
+{
+    if(number > 0){
+        variableName = number;
+    }
+    else{
+        variableName = 0;
+        std::cerr << "Błąd! Wartosc musi byc dodatnia, zmiana wartosci na 1" << std::endl;
+    }
+}
+
 
 

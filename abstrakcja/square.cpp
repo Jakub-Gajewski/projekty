@@ -1,11 +1,12 @@
 #include "square.h"
 #include <iostream>
-#include <cmath>
 
 Square::Square(
     const double dSide_
-    ) : dSide(dSide_)
+    )
 {
+    figureName = "Kwadrat";
+    isPositive(dSide_, dSide);
     std::cout << "Utworzono kwadrat" << std::endl;
 }
 
@@ -18,6 +19,8 @@ void Square::setSides()
 {
     std::cout << "Podaj bok: " << std::endl;
     std::cin >> dSide;
+
+    isPositive(dSide, dSide);
 }
 
 void Square::displaySides()
@@ -27,7 +30,7 @@ void Square::displaySides()
 
 double Square::calculateField()
 {
-    dField = pow(dSide, 2);
+    dField = dSide * dSide;
     return dField;
 }
 
@@ -37,10 +40,5 @@ double Square::calculateCircuit()
     return dCircuit;
 }
 
-void Square::displayFieldAndCircuit()
-{
-    std::cout << "Pole: " << dField << std::endl;
-    std::cout << "Obwod: " << dCircuit << std::endl;
-}
 
 
