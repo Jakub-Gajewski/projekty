@@ -15,16 +15,16 @@ public:
 
     ~RightTriangle();
 
-    void setSides() override;
+    void displaySides() const override;
 
-    void displaySides() override;
+    void setSides() override;
 
     double calculateField() override;
 
     double calculateCircuit() override;
 
 private:
-    int isTriangle(double dSide1, double dSide2, double dSide3);
+    bool isTriangle(double dSide1, double dSide2, double dSide3) const;
 
 protected:
     double dSide1 = 0.0, dSide2 = 0.0, dSide3 = 0.0;

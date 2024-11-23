@@ -10,9 +10,9 @@ public:
 
     ~Rectangle() override;
 
-    void setSides() override;
-
     void displaySides() const override;
+
+    void setSides() override;
 
     double calculateField() override;
 

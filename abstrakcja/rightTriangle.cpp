@@ -39,7 +39,7 @@ void RightTriangle::setSides()
     }
 }
 
-void RightTriangle::displaySides()
+void RightTriangle::displaySides() const
 {
     std::cout << "Bok 1: " << dSide1 << std::endl;
     std::cout << "Bok 2: " << dSide2 << std::endl;
@@ -63,7 +63,7 @@ double RightTriangle::calculateCircuit()
     }
     else {
         return 0;
-        std::cerr << "Blad: To nie jest trójkąt, suma 2 bokow jest mniejsza od trzeciego!" << std::endl;
+        std::cerr << "Blad: To nie jest trojkat, suma 2 bokow jest mniejsza od trzeciego!" << std::endl;
     }
 }
 

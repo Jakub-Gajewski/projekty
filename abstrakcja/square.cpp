@@ -23,7 +23,7 @@ void Square::setSides()
     isPositive(dSide, dSide);
 }
 
-void Square::displaySides()
+void Square::displaySides() const
 {
     std::cout << "Bok : " << dSide << std::endl;
 }

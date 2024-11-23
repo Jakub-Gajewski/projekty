@@ -21,16 +21,22 @@ double Figure::getCircuit() const
     return dCircuit;
 }
 
-void isPositive(int number, int& variableName)
+std::string Figure::getFigureName() const
+{
+    return figureName;
+}
+
+void Figure::isPositive(double number, double& variableName)
 {
     if(number > 0){
         variableName = number;
     }
     else{
         variableName = 0;
-        std::cerr << "Błąd! Wartosc musi byc dodatnia, zmiana wartosci na 1" << std::endl;
+        std::cerr << "Bład! Wartosc musi byc dodatnia, zmiana wartosci na 0" << std::endl;
     }
 }
+
 
 
 

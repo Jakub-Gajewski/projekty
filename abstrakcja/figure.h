@@ -15,9 +15,10 @@ public:
     virtual double calculateCircuit() = 0;
     double getField() const;
     double getCircuit() const;
+    std::string getFigureName() const;
 
 protected:
-    void isPositive(int number, double& variableName);
+    void isPositive(double number, double& variableName);
 
 protected:
     double dField = 0.0, dCircuit = 0.0;

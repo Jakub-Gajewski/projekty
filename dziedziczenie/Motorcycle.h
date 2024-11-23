@@ -18,7 +18,7 @@ public:
 
     ~Motorcycle();
 
-    void displayInfo() override;
+    void displayInfo() const ;
 
     std::string getType() const;
 

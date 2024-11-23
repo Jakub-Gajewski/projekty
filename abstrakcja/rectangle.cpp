@@ -9,12 +9,12 @@ Rectangle::Rectangle(
     figureName = "Prostokat";
     isPositive(dSide1_, dSide1);
     isPositive(dSide2_, dSide2);
-    std::cout << "Utworzono prostokąt" << std::endl;
+    std::cout << "Utworzono prostokat" << std::endl;
 }
 
 Rectangle::~Rectangle()
 {
-    std::cout << "Destruktor prostokąta" << std::endl;
+    std::cout << "Destruktor prostokata" << std::endl;
 }
 
 void Rectangle::setSides()

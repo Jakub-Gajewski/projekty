@@ -13,22 +13,24 @@ int main()
     Rectangle rectangle(2.0, 4.0);
     displayFigure(rectangle);
 
-    cout << "Zmienianie boków prostokąta..." << endl;
-    rectangle.setSides();
+    cout << "Zmienianie bokow prostokata..." << endl;
     displayFigure(rectangle);
+    rectangle.setSides();
+
 
     RightTriangle triangle(5.0, 12.0, 13.0);
     displayFigure(triangle);
 
+    cout << "Zmienianie bokow prostokata..." << endl;
+    displayFigure(rectangle);
     triangle.setSides();
-    displayFigure(triangle);
 
     Square square(4.0);
     displayFigure(square);
 
-    cout << "Zmienianie boków kwadratu..." << endl;
-    square.setSides();
+    cout << "Zmienianie bokow kwadratu..." << endl;
     displayFigure(square);
+    square.setSides();
 
     return 0;
 }

@@ -11,9 +11,9 @@ public:
 
     ~Square();
 
-    void setSides() override;
+    void displaySides() const override;
 
-    void displaySides() override;
+    void setSides() override;
 
     double calculateField() override;
 
