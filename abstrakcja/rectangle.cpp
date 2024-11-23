@@ -2,49 +2,49 @@
 #include <iostream>
 
 Rectangle::Rectangle(
-    double side1_,
-    double side2_
-    ): side1(side1_),
-    side2(side2_)
+    const double dSide1_,
+    const double dSide2_
+    ): dSide1(dSide1_),
+    dSide2(dSide2_)
 {
-    cout << "Utworzono prostokat" << endl;
+    std::cout << "Utworzono prostokat" << std::endl;
 }
 
 Rectangle::~Rectangle()
 {
-    cout << "Destruktor prostokata" << endl;
+    std::cout << "Destruktor prostokata" << std::endl;
 }
 
-void Rectangle::set_sides()
+void Rectangle::setSides()
 {
-    cout << "Podaj 1 bok: " << endl;
-    cin >> side1;
-    cout << "Podaj 2 bok: " << endl;
-    cin >> side2;
+    std::cout << "Podaj 1 bok: " << std::endl;
+    std::cin >> dSide1;
+    std::cout << "Podaj 2 bok: " << std::endl;
+    std::cin >> dSide2;
 }
 
-void Rectangle::display_sides()
+void Rectangle::displaySides()
 {
-    cout << "Bok 1: " << side1 << endl;
-    cout << "Bok 2: " << side2 << endl;
+    std::cout << "Bok 1: " << dSide1 << std::endl;
+    std::cout << "Bok 2: " << dSide2 << std::endl;
 }
 
-double Rectangle::calculate_field()
+double Rectangle::calculateField()
 {
-    field = side1 * side2;
-    return field;
+    dField = dSide1 * dSide2;
+    return dField;
 }
 
-double Rectangle::calculate_circuit()
+double Rectangle::calculateCircuit()
 {
-    circuit = 2 * side1 + 2 * side2;
-    return circuit;
+    dCircuit = 2 * dSide1 + 2 * dSide2;
+    return dCircuit;
 }
 
-void Rectangle::display_field_and_circuit()
+void Rectangle::displayFieldAndCircuit()
 {
-    cout << "Pole: " << field << endl;
-    cout << "Obwod: " << circuit << endl;
+    std::cout << "Pole: " << dField << std::endl;
+    std::cout << "Obwod: " << dCircuit << std::endl;
 }
 
 

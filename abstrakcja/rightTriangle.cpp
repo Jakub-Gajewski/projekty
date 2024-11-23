@@ -1,42 +1,42 @@
 #include "rightTriangle.h"
 #include <iostream>
 
-RightTriangle::Right_triangle(
-    double side1_,
-    double side2_,
-    double side3_
-    ) : side1(side1_),
-    side2(side2_),
-    side3(side3_)
+RightTriangle::RightTriangle(
+    const double dSide1_,
+    const double dSide2_,
+    const double dSide3_
+    ) : dSide1(dSide1_),
+    dSide2(dSide2_),
+    dSide3(dSide3_)
 {
-    cout << "Utworzono trojkat prostokatny" << endl;
+    std::cout << "Utworzono trojkat prostokatny" << std::endl;
 }
 
-~RightTriangle()
+RightTriangle::~RightTriangle()
 {
-    cout << "Destruktor krojkata" << endl;
+    std::cout << "Destruktor krojkata" << std::endl;
 }
 
-void set_sides()
+void RightTriangle::setSides()
 {
-    cout << "Podaj 1 bok: " << endl;
-    cin >> side1;
-    cout << "Podaj 2 bok: " << endl;
-    cin >> side2;
-    cout << "Podaj 3 bok: " << endl;
-    cin >> side3;
+    std::cout << "Podaj 1 bok: " << std::endl;
+    std::cin >> dSide1;
+    std::cout << "Podaj 2 bok: " << std::endl;
+    std::cin >> dSide2;
+    std::cout << "Podaj 3 bok: " << std::endl;
+    std::cin >> dSide3;
 }
 
-void display_sides()
+void RightTriangle::displaySides()
 {
-    cout << "Bok 1: " << side1 << endl;
-    cout << "Bok 2: " << side2 << endl;
-    cout << "Bok 3: " << side3 << endl;
+    std::cout << "Bok 1: " << dSide1 << std::endl;
+    std::cout << "Bok 2: " << dSide2 << std::endl;
+    std::cout << "Bok 3: " << dSide3 << std::endl;
 }
 
-double calculate_field()
+double RightTriangle::calculateField()
 {
-    int result = isTriangle(side1, side2, side3);
+    int result = isTriangle(dSide1, dSide2, dSide3);
 
     return result;
 
@@ -46,12 +46,12 @@ double calculate_field()
     }
 }
 
-double calculate_circuit()
+double RightTriangle::calculateCircuit()
 {
-    if(isTriangle(side1, side2, side3) > 0)
+    if(isTriangle(dSide1, dSide2, dSide3) > 0)
     {
-        circuit = side1 + side2 + side3;
-        return circuit;
+        dCircuit = dSide1 + dSide2 + dSide3;
+        return dCircuit;
     }
     else {
         return 0;
@@ -59,29 +59,29 @@ double calculate_circuit()
     }
 }
 
-void display_field_and_circuit()
+void RightTriangle::displayFieldAndCircuit()
 {
-    cout << "Pole: " << field << endl;
-    cout << "Obwod: " << circuit << endl;
+    std::cout << "Pole: " << dField << std::endl;
+    std::cout << "Obwod: " << dCircuit << std::endl;
 }
 
-int isTriangle(double side1, double side2, double side3)
+int RightTriangle::isTriangle(double dSide1, double dSide2, double dSide3)
 {
-    if(side1 + side2 > side3 && side1 + side3 > side2 && side3 + side2 > side1)
+    if(dSide1 + dSide2 > dSide3 && dSide1 + dSide3 > dSide2 && dSide3 + dSide2 > dSide1)
     {
-        if(side1 < side3 && side2 < side3)
+        if(dSide1 < dSide3 && dSide2 < dSide3)
         {
-            field = (side1 * side2) / 2;
-            return field;
+            dField = (dSide1 * dSide2) / 2;
+            return dField;
         }
-        else if(side1 < side2 && side3 < side2)
+        else if(dSide1 < dSide2 && dSide3 < dSide2)
         {
-            field = (side1 * side3) / 2;
-            return field;
+            dField = (dSide1 * dSide3) / 2;
+            return dField;
         }
         else {
-            field = (side2 * side3) / 2;
-            return field;
+            dField = (dSide2 * dSide3) / 2;
+            return dField;
         }
     }
     else {

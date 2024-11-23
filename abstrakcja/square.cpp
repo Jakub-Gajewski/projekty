@@ -1,45 +1,46 @@
 #include "square.h"
 #include <iostream>
+#include <cmath>
 
 Square::Square(
-    double side_
-    ) : side(side_)
+    const double dSide_
+    ) : dSide(dSide_)
 {
-    cout << "Utworzono kwadrat" << endl;
+    std::cout << "Utworzono kwadrat" << std::endl;
 }
 
 Square::~Square()
 {
-    cout << "Destruktor kwadratu" << endl;
+    std::cout << "Destruktor kwadratu" << std::endl;
 }
 
-void Square::set_sides()
+void Square::setSides()
 {
-    cout << "Podaj bok: " << endl;
-    cin >> side;
+    std::cout << "Podaj bok: " << std::endl;
+    std::cin >> dSide;
 }
 
-void Square::display_sides()
+void Square::displaySides()
 {
-    cout << "Bok : " << side << endl;
+    std::cout << "Bok : " << dSide << std::endl;
 }
 
-double Square::calculate_field()
+double Square::calculateField()
 {
-    field = pow(side, 2);
-    return field;
+    dField = pow(dSide, 2);
+    return dField;
 }
 
-double Square::calculate_circuit()
+double Square::calculateCircuit()
 {
-    circuit = 4 * side;
-    return circuit;
+    dCircuit = 4 * dSide;
+    return dCircuit;
 }
 
-void Square::display_field_and_circuit()
+void Square::displayFieldAndCircuit()
 {
-    cout << "Pole: " << field << endl;
-    cout << "Obwod: " << circuit << endl;
+    std::cout << "Pole: " << dField << std::endl;
+    std::cout << "Obwod: " << dCircuit << std::endl;
 }
 
 

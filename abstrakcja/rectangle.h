@@ -8,24 +8,24 @@ class Rectangle : public Figure{
 
 public:
     Rectangle(
-        double side1_,
-        double side2_
+        const double dSide1_,
+        const double dSide2_
         );
 
     ~Rectangle();
 
-    void set_sides();
+    void setSides() override;
 
-    void display_sides();
+    void displaySides() override;
 
-    double calculate_field();
+    double calculateField() override;
 
-    double calculate_circuit();
+    double calculateCircuit() override;
 
-    void display_field_and_circuit();
+    void displayFieldAndCircuit() override;
 
 protected:
-    double side1 = 0.0, side2 = 0.0;
+    double dSide1 = 0.0, dSide2 = 0.0;
 };
 
 #endif // RECTANGLE_H

@@ -3,26 +3,25 @@
 
 #include <iostream>
 #include "figure.h"
+#include <cmath>
 
 class Square : public Figure{
 
 public:
-    Square(double side_);
+    Square(double dSide_);
 
     ~Square();
 
-    void set_sides();
+    void setSides() override;
 
-    void display_sides();
+    void getSides() override;
 
-    double calculate_field();
+    double calculateField() override;
 
-    double calculate_circuit();
-
-    void display_field_and_circuit();
+    double calculateCircuit() override;
 
 protected:
-    double side=0.0;
+    double dSide=0.0;
 };
 
 #endif // SQUARE_H

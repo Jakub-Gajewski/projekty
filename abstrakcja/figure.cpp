@@ -1,11 +1,25 @@
 #include "figure.h"
+#include <iostream>
 
 Figure::Figure()
 {
-    cout << "Utworzono figure" << endl;
+    std::cout << "Utworzono figure" << std::endl;
 }
 
 Figure::~Figure()
 {
-    cout << "Destruktor figury" << endl;
+    std::cout << "Destruktor figury" << std::endl;
 }
+
+Figure::getField()
+{
+    return dField;
+}
+
+
+Figure::getCircuit()
+{
+    return dCircuit;
+}
+
+

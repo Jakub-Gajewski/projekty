@@ -12,14 +12,14 @@ int main()
     Rectangle t1(2.0, 4.0);
     RightTriangle g2(5, 12, 14);
 
-    t1.display_sides();
+    t1.displaySides();
     cout << "Zmien dlugosci bokow" << endl;
-    t1.set_sides();
-    t1.calculate_circuit();
-    t1.display_field_and_circuit();
+    t1.setSides();
+    t1.calculateCircuit();
+    t1.displayFieldAndCircuit();
     cout << endl;
-    g2.display_sides();
-    g2.calculate_field();
-    g2.display_field_and_circuit();
+    g2.displaySides();
+    g2.calculateField();
+    g2.displayFieldAndCircuit();
     return 0;
 }

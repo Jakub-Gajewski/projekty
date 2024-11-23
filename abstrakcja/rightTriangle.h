@@ -8,25 +8,30 @@ class RightTriangle : public Figure{
 
 public:
     RightTriangle(
-        double side1_,
-        double side2_,
-        double side3_
+        double dSide1_,
+        double dSide2_,
+        double dSide3_
         );
 
     ~RightTriangle();
 
-    void set_sides();
+    void setSides() override;
 
-    void display_sides();
+    void getSides() override;
 
-    double calculate_field();
+    double calculateField() override;
 
-    double calculate_circuit();
+    double calculateCircuit() override;
 
-    void display_field_and_circuit();
+    void getField() override;
+
+    void getCircuit() override;
+
+private:
+    int isTriangle(double dSide1, double dSide2, double dSide3);
 
 protected:
-    double side1 = 0.0, side2 = 0.0, side3 = 0.0;
+    double dSide1 = 0.0, dSide2 = 0.0, dSide3 = 0.0;
 };
 
 #endif // RIGHTTRIANGLE_H

@@ -7,13 +7,15 @@ public:
 
     virtual ~Figure();
 
-    virtual void display_sides() = 0;
-    virtual double calculate_field() = 0;
-    virtual double calculate_circuit() = 0;
-    virtual void display_field_and_circuit() = 0;
+    virtual void getSides() = 0;
+    virtual void setSides() = 0;
+    virtual double calculateField() = 0;
+    virtual double calculateCircuit() = 0;
+    double getField();
+    double getCircuit();
 
 protected:
-    double field = 0.0, circuit = 0.0;
+    double dField = 0.0, dCircuit = 0.0;
 };
 
 #endif // FIGURE_H
