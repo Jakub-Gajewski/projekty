@@ -25,11 +25,11 @@ public:
 
     std::string getBody() const;
 
-    void displayInfo() override;
+    void displayInfo()const override;
 
 protected:
 
-    void logMaintenance() override;
+    void logMaintenance() const override;
 
 private:
 

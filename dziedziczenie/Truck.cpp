@@ -49,7 +49,7 @@
         return sCargo;
     }
 
-    void Truck::displayInfo()
+    void Truck::displayInfo() const
     {
         std::cout << "Ciezarowka: " << sBrand << " " << sModel << ", rok: " << iProductionYear
                   << ", przebieg: " << iMileage << " km, naped: " << sDrive << ", nadwozie: " << sBody
@@ -62,7 +62,7 @@
                   << ", ladunek: " << sCargo << ", ladownosc: " << sCapacity << std::endl;
     }
 
-    void Truck::logMaintenance()
+    void Truck::logMaintenance() const
     {
         std::cout << "Logowanie serwisowania ciezarowki: " << sBrand << " " << sModel << std::endl;
     }

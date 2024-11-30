@@ -30,13 +30,13 @@ public:
 
     std::string getCargo() const;
 
-    void displayInfo() override;
+    void displayInfo() const override;
 
 protected:
     void logTruckDetails() const;
 
 private:
-    void logMaintenance() override;
+    void logMaintenance() const override;
 
     void validateCapacity(int sCapacity);
 

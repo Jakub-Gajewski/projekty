@@ -22,10 +22,15 @@
         std::cout << "Destruktor dla motocyklu " << sBrand << " " << sModel << std::endl;
     }
 
-    void Motorcycle::displayInfo()
+    void Motorcycle::displayInfo() const
     {
-        std::cout << "Motocykl " << sBrand << " " << sModel << " (" << iProductionYear << "), pojemnosc silnika: "
-                  << iEngineCapacity << "cc, przebieg: " << iMileage << " km, poziom paliwa: " << iFuelLevelInPercent << "%" << std::endl;
+        std::cout << "Marka: " << sBrand << ", Model: " << sModel
+                  << ", Rok produkcji: " << iProductionYear
+                  << ", Przebieg: " << iMileage
+                  << ", Poziom paliwa: " << iFuelLevelInPercent << "%"
+                  << ", Typ: " << sType
+                  << ", Pojemność silnika: " << iEngineCapacity << "cm^3"
+                  << std::endl;
     }
 
     std::string Motorcycle::getType() const
@@ -38,7 +43,7 @@
         return iEngineCapacity;
     }
 
-    void Motorcycle::logMaintenance()
+    void Motorcycle::logMaintenance() const
     {
         std::cout << "Logowanie serwisowania motocykla: " << sBrand << " " << sModel << std::endl;
     }

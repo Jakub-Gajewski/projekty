@@ -15,7 +15,7 @@ public:
 
     virtual ~Vehicle();
 
-    virtual void displayInfo() = 0;
+    virtual void displayInfo() const = 0;
 
     void setMileage(const int nMil);
 
@@ -26,7 +26,7 @@ public:
     void setFuelLevel(int newFuelLevel);
 
 protected:
-    virtual void logMaintenance() = 0;
+    virtual void logMaintenance() const = 0;
 
     void validateFuelLevel(int newFuelLevel);
 

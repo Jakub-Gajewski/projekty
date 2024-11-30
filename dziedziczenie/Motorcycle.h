@@ -18,14 +18,14 @@ public:
 
     ~Motorcycle();
 
-    void displayInfo() const ;
+    void displayInfo() const override;
 
     std::string getType() const;
 
     int getEngineCapacity() const;
 
 protected:
-    void logMaintenance() override;
+    void logMaintenance() const override;
 
 
 protected:

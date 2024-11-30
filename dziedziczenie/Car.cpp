@@ -40,12 +40,12 @@ std::string Car::getBody() const
     return sBody;
 }
 
-void Car::displayInfo()
+void Car::displayInfo() const
 {
     std::cout << "Samochod: " << sBrand << " " << sModel << ", rok: " << iProductionYear << ", przebieg: " << iMileage << " km, naped: " << sDrive << ", nadwozie: " << sBody << ", liczba biegow: " << iNumberOfGears << std::endl;
 }
 
-void Car::logMaintenance()
+void Car::logMaintenance() const
 {
     std::cout << "Informacje o konserwacji: " << sBrand << " " << sModel << std::endl;
 }
