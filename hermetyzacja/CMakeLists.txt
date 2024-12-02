@@ -5,7 +5,8 @@ project(hermetyzacja LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(hermetyzacja main.cpp)
+add_executable(hermetyzacja main.cpp
+    userAccount.h userAccount.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS hermetyzacja
