@@ -4,22 +4,18 @@
 #include <regex>
 
 UserAccount::UserAccount(
-    std::string sAccountType_,
-    std::string sAccountStatus_,
-    std::string sEmail_,
-    std::string sLogin_,
-    std::string sPassword_,
-    int iAccountBalance_,
-    std::string sAccountNumber_,
-    int iFailedAttempts_
+    const std::string& sAccountType_,
+    const std::string& sAccountStatus_,
+    const std::string& sEmail_,
+    const std::string& sLogin_,
+    const std::string& sPassword_,
+    const std::string& sAccountNumber_
     ) : sAccountType(sAccountType_),
     sAccountStatus(sAccountStatus_),
     sEmail(sEmail_),
     sLogin(sLogin_),
     sPassword(hashPassword(sPassword_)),
-    iAccountBalance(iAccountBalance_),
-    sAccountNumber(sAccountNumber_),
-    iFailedAttempts(iFailedAttempts_)
+    sAccountNumber(sAccountNumber_)
 {
     std::cout << "Utworzono konto uzytkownika" << std::endl;
 }
@@ -35,9 +31,17 @@ void UserAccount::login(std::string login_, std::string password_)
     {
         bLogin = true;
         std::cout << "Logowanie pomyślne" << std::endl;
+        iFailedAttempts = 0;
     } else
     {
         std::cout << "Nieudane logowanie" << std::endl;
+        iFailedAttempts += 1;
+
+        if(iFailedAttempts == 5)
+        {
+            sAccountStatus = "Zablokowane";
+            std::cerr << "Wpisano 5 razy niepoprawne chaslo, konto zastało zablokowane" << std::endl;
+        }
     }
 }
 
