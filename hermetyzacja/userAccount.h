@@ -10,27 +10,31 @@ public:
 
     ~UserAccount();
 
-    void setPassword(std::string o_pass, std::string n_pass);
+    void login(std::string login_, std::string password_);
+
+    void setPassword(std::string oPass, std::string nPass);
 
     void contributeMoney(std::string password_, int quantity_);
 
     void withdrawMoney(std::string password_, int quantity_);
 
-    void getBalance(std::string password_);
+    int getBalance(std::string password_) const;
 
-    void changeEmail(std::string password_, std::string new_email);
+    void changeEmail(std::string password_, std::string newEmail);
 
     std::string getAccType() const;
 
     std::string getAccStatus() const;
 
 private:
-    void logOperation(std::string operation);
     bool validateEmail(std::string email);
+    std::string hashPassword(const std::string& password);
+    bool isLoggedIn() const;
 
 protected:
     std::string sAccountType = "osobiste";
     std::string sAccountStatus = "aktywny";
+    bool bLogin = false;
 
 private:
     int iAccountBalance = 0;
