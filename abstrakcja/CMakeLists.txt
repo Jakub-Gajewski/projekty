@@ -6,11 +6,16 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(abstrakcja main.cpp
-    figure.h figure.cpp
-    rectangle.h rectangle.cpp
-    square.h square.cpp
-    rightTriangle.h rightTriangle.cpp
-    figureFunction.h figureFunction.cpp)
+    figure.h
+    figure.cpp
+    rectangle.h
+    rectangle.cpp
+    rightTriangle.h
+    rightTriangle.cpp
+    square.h
+    square.cpp
+    figureFunction.h
+)
 
 include(GNUInstallDirs)
 install(TARGETS abstrakcja

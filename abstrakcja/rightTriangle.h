@@ -2,7 +2,6 @@
 #define RIGHTTRIANGLE_H
 
 #include "figure.h"
-#include <iostream>
 
 class RightTriangle : public Figure{
 

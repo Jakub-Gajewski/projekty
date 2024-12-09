@@ -2,18 +2,18 @@
 #include "Car.h"
 
 Car::Car(
-    const std::string& sBrand_,
-    const std::string& sModel_,
-    const int iProductionYear_,
-    const int iMileage_,
-    const int iFuelLevelInPercent_,
-    const std::string& sDrive_,
-    const std::string& sBody_,
-    const int iNumberOfGears_
-    ) : Vehicle(sBrand_, sModel_, iProductionYear_, iMileage_, iFuelLevelInPercent_),
-    sDrive(sDrive_),
-    sBody(sBody_),
-    iNumberOfGears(iNumberOfGears_)
+    const std::string& sBrand_
+    ,const std::string& sModel_
+    ,const int iProductionYear_
+    ,const int iMileage_
+    ,const int iFuelLevelInPercent_
+    ,const std::string& sDrive_
+    ,const std::string& sBody_
+    ,const int iNumberOfGears_
+    ) : Vehicle(sBrand_, sModel_, iProductionYear_, iMileage_, iFuelLevelInPercent_)
+    ,sDrive(sDrive_)
+    ,sBody(sBody_)
+    ,iNumberOfGears(iNumberOfGears_)
 {
     std::cout << "Utworzona obiekt dla samochodu " << sBrand << " " << sModel << ", o nadwoziu " << sBody << std::endl;
 }

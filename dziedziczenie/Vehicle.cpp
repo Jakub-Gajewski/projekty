@@ -2,16 +2,16 @@
 #include "Vehicle.h"
 
 Vehicle::Vehicle(
-    const std::string& sBrand_,
-    const std::string& sModel_,
-    const int iProductionYear_,
-    const int iMileage_,
-    const int iFuelLevelInPercent_
-    ) : sBrand(sBrand_),
-    sModel(sModel_),
-    iProductionYear(iProductionYear_),
-    iMileage(iMileage_),
-    iFuelLevelInPercent(iFuelLevelInPercent_)
+    const std::string& sBrand_
+    ,const std::string& sModel_
+    ,const int iProductionYear_
+    ,const int iMileage_
+    ,const int iFuelLevelInPercent_
+    ) : sBrand(sBrand_)
+    sModel(sModel_)
+    ,iProductionYear(iProductionYear_)
+    ,iMileage(iMileage_)
+    ,iFuelLevelInPercent(iFuelLevelInPercent_)
 {
     std::cout << "Utworzony obiekt dla pojazdu" << std::endl;
 }

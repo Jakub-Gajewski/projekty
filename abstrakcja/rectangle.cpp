@@ -1,9 +1,9 @@
-#include "rectangle.h"
 #include <iostream>
+#include "rectangle.h"
 
 Rectangle::Rectangle(
-    double dSide1_,
-    double dSide2_
+    double dSide1_
+    ,double dSide2_
     )
 {
     figureName = "Prostokat";

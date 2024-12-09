@@ -2,49 +2,49 @@
 #include "Motorcycle.h"
 
 
-    Motorcycle::Motorcycle(
-        const std::string& sBrand_,
-        const std::string& sModel_,
-        const int iProductionYear_,
-        const int iMileage_,
-        const int iFuelLevelInPercent_,
-        const std::string& sType_,
-        const int iEngineCapacity_
-        ) : Vehicle(sBrand_, sModel_, iProductionYear_, iMileage_, iFuelLevelInPercent_),
-        sType(sType_),
-        iEngineCapacity(iEngineCapacity_)
-    {
-        std::cout << "Utworzono obiekt dla motocyklu " << sBrand << " " << sModel << ", o pojemnosci silnika " << iEngineCapacity << "cc" << std::endl;
+Motorcycle::Motorcycle(
+    const std::string& sBrand_
+    ,const std::string& sModel_
+    ,const int iProductionYear_
+    ,const int iMileage_
+    ,const int iFuelLevelInPercent_
+    ,const std::string& sType_
+    ,const int iEngineCapacity_
+    ) : Vehicle(sBrand_, sModel_, iProductionYear_, iMileage_, iFuelLevelInPercent_)
+    ,sType(sType_)
+    ,iEngineCapacity(iEngineCapacity_)
+{
+    std::cout << "Utworzono obiekt dla motocyklu " << sBrand << " " << sModel << ", o pojemnosci silnika " << iEngineCapacity << "cc" << std::endl;
     }
 
-    Motorcycle::~Motorcycle()
-    {
-        std::cout << "Destruktor dla motocyklu " << sBrand << " " << sModel << std::endl;
-    }
+Motorcycle::~Motorcycle()
+{
+    std::cout << "Destruktor dla motocyklu " << sBrand << " " << sModel << std::endl;
+}
 
-    void Motorcycle::displayInfo() const
-    {
-        std::cout << "Marka: " << sBrand << ", Model: " << sModel
-                  << ", Rok produkcji: " << iProductionYear
-                  << ", Przebieg: " << iMileage
-                  << ", Poziom paliwa: " << iFuelLevelInPercent << "%"
-                  << ", Typ: " << sType
-                  << ", Pojemność silnika: " << iEngineCapacity << "cm^3"
-                  << std::endl;
-    }
+void Motorcycle::displayInfo() const
+{
+    std::cout << "Marka: " << sBrand << ", Model: " << sModel
+              << ", Rok produkcji: " << iProductionYear
+              << ", Przebieg: " << iMileage
+              << ", Poziom paliwa: " << iFuelLevelInPercent << "%"
+              << ", Typ: " << sType
+              << ", Pojemność silnika: " << iEngineCapacity << "cm^3"
+              << std::endl;
+}
 
-    std::string Motorcycle::getType() const
-    {
-        return sType;
-    }
+std::string Motorcycle::getType() const
+{
+    return sType;
+}
 
-    int Motorcycle::getEngineCapacity() const
-    {
-        return iEngineCapacity;
-    }
+int Motorcycle::getEngineCapacity() const
+{
+    return iEngineCapacity;
+}
 
-    void Motorcycle::logMaintenance() const
-    {
-        std::cout << "Logowanie serwisowania motocykla: " << sBrand << " " << sModel << std::endl;
-    }
+void Motorcycle::logMaintenance() const
+{
+    std::cout << "Logowanie serwisowania motocykla: " << sBrand << " " << sModel << std::endl;
+}
 

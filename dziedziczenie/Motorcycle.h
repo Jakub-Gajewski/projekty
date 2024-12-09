@@ -1,19 +1,18 @@
 #ifndef MOTORCYCLE_H
 #define MOTORCYCLE_H
 
-#include <iostream>
 #include "Vehicle.h"
 
 class Motorcycle : public Vehicle {
 public:
     Motorcycle(
-        const std::string& sBrand_,
-        const std::string& sModel_,
-        const int iProductionYear_,
-        const int iMileage_,
-        const int iFuelLevelInPercent_,
-        const std::string& sType_,
-        const int iEngineCapacity_
+        const std::string& sBrand_
+        ,const std::string& sModel_
+        ,const int iProductionYear_
+        ,const int iMileage_
+        ,const int iFuelLevelInPercent_
+        ,const std::string& sType_
+        ,const int iEngineCapacity_
         );
 
     ~Motorcycle();

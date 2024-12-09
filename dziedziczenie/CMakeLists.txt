@@ -6,15 +6,14 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(dziedziczenie main.cpp
-    Vehicle.h
-    Motorcycle.h
     Car.h
-    Truck.h
     Car.cpp
-    Vehicle.cpp
-    Truck.cpp
+    Motorcycle.h
     Motocycle.cpp
-    Car.h Car.cpp
+    Truck.h
+    Truck.cpp
+    Vehicle.h
+    Vehicle.cpp
 
 )
 

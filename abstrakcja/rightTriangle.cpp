@@ -1,10 +1,10 @@
-#include "rightTriangle.h"
 #include <iostream>
+#include "rightTriangle.h"
 
 RightTriangle::RightTriangle(
-    const double dSide1_,
-    const double dSide2_,
-    const double dSide3_
+    const double dSide1_
+    ,const double dSide2_
+    ,const double dSide3_
     )
 {
     figureName = "Trojkat prostokatny";

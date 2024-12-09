@@ -2,7 +2,6 @@
 #define RECTANGLE_H
 
 #include "figure.h"
-#include <iostream>
 
 class Rectangle : public Figure {
 public:

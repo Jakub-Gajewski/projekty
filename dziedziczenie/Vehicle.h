@@ -1,16 +1,16 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
-#include <iostream>
+#include <string>
 
 class Vehicle {
 public:
     Vehicle(
-        const std::string& sBrand_,
-        const std::string& sModel_,
-        const int iProductionYear_,
-        const int iMileage_,
-        const int iFuelLevelInPercent_
+        const std::string& sBrand_
+        ,const std::string& sModel_
+        ,const int iProductionYear_
+        ,const int iMileage_
+        ,const int iFuelLevelInPercent_
         );
 
     virtual ~Vehicle();

@@ -1,5 +1,5 @@
-#include "square.h"
 #include <iostream>
+#include "square.h"
 
 Square::Square(
     const double dSide_

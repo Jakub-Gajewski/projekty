@@ -1,23 +1,22 @@
 #ifndef TRUCK_H
 #define TRUCK_H
 
-#include <iostream>
 #include "Car.h"
 
 class Truck : public Car {
 public:
     Truck(
-        const std::string& sBrand_,
-        const std::string& sModel_,
-        const int iProductionYear_,
-        const int iMileage_,
-        const int iFuelLevelInPercent_,
-        const std::string& drive_,
-        const std::string& sBody_,
-        const int iNumberOfGears_,
-        const int iNumberOfWheels_,
-        const std::string& sCargo_,
-        const std::string& sCapacity_
+        const std::string& sBrand_
+        ,const std::string& sModel_
+        ,const int iProductionYear_
+        ,const int iMileage_
+        ,const int iFuelLevelInPercent_
+        ,const std::string& drive_
+        ,const std::string& sBody_
+        ,const int iNumberOfGears_
+        ,const int iNumberOfWheels_
+        ,const std::string& sCargo_
+        ,const std::string& sCapacity_
         );
 
     ~Truck() override;

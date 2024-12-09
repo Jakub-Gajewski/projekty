@@ -1,9 +1,10 @@
 #include <iostream>
 #include <string>
+#include "figureFunction.h"
 #include "rectangle.h"
 #include "rightTriangle.h"
 #include "square.h"
-#include "figureFunction.h"
+
 
 using namespace std;
 

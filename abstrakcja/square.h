@@ -1,7 +1,6 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
-#include <iostream>
 #include "figure.h"
 
 class Square : public Figure{
