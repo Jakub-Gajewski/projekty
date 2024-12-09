@@ -3,6 +3,7 @@
 #include <functional>
 #include <regex>
 
+// Konstruktor
 UserAccount::UserAccount(
     const std::string& sAccountType_,
     const std::string& sAccountStatus_,
@@ -20,14 +21,16 @@ UserAccount::UserAccount(
     std::cout << "Utworzono konto uzytkownika" << std::endl;
 }
 
+// Destruktor
 UserAccount::~UserAccount()
 {
     std::cout << "Destruktor konta uzytkownika" << std::endl;
 }
 
-void UserAccount::login(std::string login_, std::string password_)
+// Logowanie
+void UserAccount::logIn(std::string login_, std::string password_)
 {
-    if (sLogin == login_ && sPassword == password_)
+    if (sLogin == login_ && sPassword == password_ && sAccountStatus != "zablokowane")
     {
         bLogin = true;
         std::cout << "Logowanie pomyślne" << std::endl;
@@ -39,20 +42,29 @@ void UserAccount::login(std::string login_, std::string password_)
 
         if(iFailedAttempts == 5)
         {
-            sAccountStatus = "Zablokowane";
-            std::cerr << "Wpisano 5 razy niepoprawne chaslo, konto zastało zablokowane" << std::endl;
+            sAccountStatus = "zablokowane";
+            std::cerr << "Wpisano 5 razy niepoprawne hasło, konto zostało zablokowane" << std::endl;
         }
     }
 }
 
+// Wylogowanie
+void UserAccount::logOut()
+{
+    bLogin = false;
+    std::cout << "Wylogowanie pomyślne" << std::endl;
+}
+
+// Zmiana hasła
 void UserAccount::setPassword(std::string nPass)
 {
     if (!isLoggedIn()) return;
 
     sPassword = hashPassword(nPass);
-    std::cout << "Zmieniono haslo" << std::endl;
+    std::cout << "Zmieniono hasło" << std::endl;
 }
 
+// Wpłata środków
 void UserAccount::contributeMoney(int quantity_)
 {
     if (!isLoggedIn()) return;
@@ -60,13 +72,14 @@ void UserAccount::contributeMoney(int quantity_)
     if (quantity_ > 0)
     {
         iAccountBalance += quantity_;
-        std::cout << "Wpłata srodkow pomyślna" << std::endl;
+        std::cout << "Wpłata środków pomyślna" << std::endl;
     } else
     {
-        std::cout << "kwota wplaty jest rowna/mniejsza od 0" << std::endl;
+        std::cout << "Kwota wpłaty jest równa/mniejsza od 0" << std::endl;
     }
 }
 
+// Wypłata środków
 void UserAccount::withdrawMoney(int quantity_)
 {
     if (!isLoggedIn()) return;
@@ -75,12 +88,13 @@ void UserAccount::withdrawMoney(int quantity_)
     {
         iAccountBalance -= quantity_;
         std::cout << "Wypłata środków pomyślna" << std::endl;
-    }else
+    } else
     {
-        std::cout << "Brak srodkow na koncie" << std::endl;
+        std::cout << "Brak środków na koncie" << std::endl;
     }
 }
 
+// Pobranie salda
 int UserAccount::getBalance() const
 {
     if (!isLoggedIn()) return 0;
@@ -88,18 +102,20 @@ int UserAccount::getBalance() const
     return iAccountBalance;
 }
 
+// Zmiana adresu email
 void UserAccount::changeEmail(std::string newEmail)
 {
     if (bLogin && validateEmail(newEmail))
     {
         sEmail = newEmail;
-        std::cout << "Zmieniono emial uzytkownika" << std::endl;
+        std::cout << "Zmieniono emial użytkownika" << std::endl;
     } else
     {
-        std::cerr << "Nieprawidlowe haslo" << std::endl;
+        std::cerr << "Nieprawidłowe hasło" << std::endl;
     }
 }
 
+// Pobranie typu konta
 std::string UserAccount::getAccType() const
 {
     if (!isLoggedIn()) return "Nieznany";
@@ -107,6 +123,7 @@ std::string UserAccount::getAccType() const
     return sAccountType;
 }
 
+// Pobranie statusu konta
 std::string UserAccount::getAccStatus() const
 {
     if (!isLoggedIn()) return "Nieznany";
@@ -114,16 +131,45 @@ std::string UserAccount::getAccStatus() const
     return sAccountStatus;
 }
 
-bool UserAccount::validateEmail(std::string email)
+// Pobranie adresu email
+std::string UserAccount::getEmail() const
 {
-    std::regex emailRegex(R"((\w+)(\.{1}\w+)*@(\w+)(\.\w{2,})+)");
-    return std::regex_match(email, emailRegex);
+    if (!isLoggedIn()) return "Nieznany";
+
+    return sEmail;
 }
 
-std::size_t UserAccount::hashPassword(const std::string& password) {
-    return std::hash<std::string>{}(password);
+// Pobranie loginu
+std::string UserAccount::getLogin() const
+{
+    if (!isLoggedIn()) return "Nieznany";
+
+    return sLogin;
 }
 
+// Ustawienie statusu konta (dla administratora)
+void UserAccount::setAccountStatus(const std::string& newStatus, const AdminAccount& admin)
+{
+    if (admin.isLoggedIn()) {
+        sAccountStatus = newStatus;
+    } else
+    {
+        std::cerr << "Brak autoryzacji admina!" << std::endl;
+    }
+}
+
+// Ustawienie typu konta (dla administratora)
+void UserAccount::setAccountType(const std::string& newType, const AdminAccount& admin)
+{
+    if (admin.isLoggedIn()) {
+        sAccountType = newType;
+    } else
+    {
+        std::cerr << "Brak autoryzacji admina!" << std::endl;
+    }
+}
+
+// Sprawdzenie czy użytkownik jest zalogowany
 bool UserAccount::isLoggedIn() const
 {
     if (!bLogin)
@@ -134,4 +180,15 @@ bool UserAccount::isLoggedIn() const
     return true;
 }
 
+// Walidacja adresu email
+bool UserAccount::validateEmail(std::string email)
+{
+    std::regex emailRegex(R"((\w+)(\.{1}\w+)*@(\w+)(\.\w{2,})+)");
+    return std::regex_match(email, emailRegex);
+}
 
+// Haszowanie hasła
+std::size_t UserAccount::hashPassword(const std::string& password)
+{
+    return std::hash<std::string>{}(password);
+}

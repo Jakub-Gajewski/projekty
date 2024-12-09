@@ -5,25 +5,22 @@
 #include <vector>
 
 class AdminAccount : public UserAccount {
-
 public:
     AdminAccount(
-        std::string sAccountType_,
-        std::string sAccountStatus_,
-        std::string sEmail_,
-        std::string sLogin_,
-        std::string sPassword_,
-        int iAdminId_);
+        const std::string& sAccountType_,
+        const std::string& sAccountStatus_,
+        const std::string& sEmail_,
+        const std::string& sLogin_,
+        const std::string& sPassword_,
+        const int iAdminId_);
 
     ~AdminAccount();
 
     void displayLog() const;
 
-    void logAction(const std::string& action);
+    void changeAccountStatus(const std::string& nStatus);
 
-    void change_account_status(const std::string& nStatus);
-
-    void change_account_type(const std::string& nType);
+    void changeAccountType(const std::string& nType);
 
     void blockAccount(UserAccount& user);
 
@@ -31,12 +28,14 @@ public:
 
     void generateUserReport(const UserAccount& user) const;
 
-    void secureChangeAccountType(UserAccount& user, const std::string& n_type, const std::string& password);
+    void secureChangeAccountType(UserAccount& user, const std::string& nType, const std::string& password);
 
     int getAdminID() const;
 
 private:
     bool authorize(const std::string& sPassword_) const;
+
+    void logAction(const std::string& action);
 
 private:
     int iAdminId;
