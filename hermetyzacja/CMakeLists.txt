@@ -6,8 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(hermetyzacja main.cpp
-    userAccount.h userAccount.cpp
-    adminAccount.h adminAccount.cpp)
+    adminAccount.cpp
+    adminAccount.h
+    userAccount.cpp
+    userAccount.h
+)
 
 include(GNUInstallDirs)
 install(TARGETS hermetyzacja

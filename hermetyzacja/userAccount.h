@@ -2,16 +2,17 @@
 #define USERACCOUNT_H
 
 #include <iostream>
-#include "adminAccount.h"
 
 class UserAccount {
 public:
-    UserAccount(const std::string& sAccountType_,
-                const std::string& sAccountStatus_,
-                const std::string& sEmail_,
-                const std::string& sLogin_,
-                const std::string& sPassword_,
-                const std::string& sAccountNumber_);
+    UserAccount(
+        const std::string& sAccountType_
+        ,const std::string& sAccountStatus_
+        ,const std::string& sEmail_
+        ,const std::string& sLogin_
+        ,const std::string& sPassword_
+        ,const std::string& sAccountNumber_
+        );
 
     ~UserAccount();
 
@@ -37,18 +38,25 @@ public:
 
     std::string getLogin() const;
 
+    friend class AdminAccount;
+
 protected:
+
     bool isLoggedIn() const;
 
-private:
-    bool validateEmail(std::string email);
+    void setAccountStatus(const std::string& newStatus);
 
-    std::size_t hashPassword(const std::string& password);
+    void changeAccountType(const std::string& newType);
+
+private:
+    bool validateEmail(std::string& email);
+
+protected:
+    bool bLogin = false;
 
 private:
     std::string sAccountType = "osobiste";
     std::string sAccountStatus = "aktywny";
-    bool bLogin = false;
     std::string sEmail;
     std::string sLogin;
     std::string sPassword;
