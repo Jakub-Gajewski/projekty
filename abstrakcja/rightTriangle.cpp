@@ -1,4 +1,3 @@
-#include <iostream>
 #include "rightTriangle.h"
 
 RightTriangle::RightTriangle(
@@ -7,22 +6,22 @@ RightTriangle::RightTriangle(
     ,const double dSide3_
     )
 {
-    figureName = "Trojkat prostokatny";
+    figureName = "Trójkąt prostokątny";
     isPositive(dSide1_, dSide1);
     isPositive(dSide2_, dSide2);
     isPositive(dSide3_, dSide3);
 
-    if (!isTriangle(dSide1, dSide2, dSide3))
+    if (!isRightTriangle())
     {
-        std::cerr << "Blad: Podane boki nie tworza trojkata!" << std::endl;
+        std::cerr << "Błąd: Podane boki nie tworzą trójkąta prostokątnego!" << std::endl;
+        dSide1 = dSide2 = dSide3 = 0;
     }
-
-    std::cout << "Utworzono trojkat prostokatny" << std::endl;
+    std::cout << "Utworzono trójkąt prostokątny" << std::endl;
 }
 
 RightTriangle::~RightTriangle()
 {
-    std::cout << "Destruktor krojkata" << std::endl;
+    std::cout << "Destruktor trojkata" << std::endl;
 }
 
 void RightTriangle::setSides()
@@ -34,7 +33,7 @@ void RightTriangle::setSides()
     std::cout << "Podaj 3 bok: " << std::endl;
     std::cin >> dSide3;
 
-    if (!isTriangle(dSide1, dSide2, dSide3)) {
+    if (!isRightTriangle()) {
         std::cerr << "Blad: Podane boki nie tworza trojkata!" << std::endl;
     }
 }
@@ -48,15 +47,22 @@ void RightTriangle::displaySides() const
 
 double RightTriangle::calculateField()
 {
+    if (!isRightTriangle())
+    {
+        std::cerr << "Błąd: Nie jest to trójkąt prostokątny!" << std::endl;
+        return 0;
+    }
+
     double base = std::max(dSide1, std::max(dSide2, dSide3));
     double height = (dSide1 == base) ? dSide2 : ((dSide2 == base) ? dSide3 : dSide1);
     dField = 0.5 * base * height;
     return dField;
 }
 
+
 double RightTriangle::calculateCircuit()
 {
-    if(isTriangle(dSide1, dSide2, dSide3))
+    if(isRightTriangle())
     {
         dCircuit = dSide1 + dSide2 + dSide3;
         return dCircuit;
@@ -67,6 +73,10 @@ double RightTriangle::calculateCircuit()
     }
 }
 
-bool RightTriangle::isTriangle(double a, double b, double c) const {
-    return (a + b > c) && (a + c > b) && (b + c > a);
+bool RightTriangle::isRightTriangle() const
+{
+    return (dSide1 * dSide1 + dSide2 * dSide2 == dSide3 * dSide3) ||
+           (dSide1 * dSide1 + dSide3 * dSide3 == dSide2 * dSide2) ||
+           (dSide2 * dSide2 + dSide3 * dSide3 == dSide1 * dSide1);
 }
+

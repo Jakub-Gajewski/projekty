@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Motorcycle.h"
 
 
@@ -24,14 +23,18 @@ Motorcycle::~Motorcycle()
 
 void Motorcycle::displayInfo() const
 {
+    auto fuelLevel = iFuelLevelInPercent;
+    auto engineCapacity = iEngineCapacity;
+
     std::cout << "Marka: " << sBrand << ", Model: " << sModel
               << ", Rok produkcji: " << iProductionYear
               << ", Przebieg: " << iMileage
-              << ", Poziom paliwa: " << iFuelLevelInPercent << "%"
+              << ", Poziom paliwa: " << fuelLevel << "%"
               << ", Typ: " << sType
-              << ", Pojemność silnika: " << iEngineCapacity << "cm^3"
+              << ", Pojemność silnika: " << engineCapacity << "cm^3"
               << std::endl;
 }
+
 
 std::string Motorcycle::getType() const
 {

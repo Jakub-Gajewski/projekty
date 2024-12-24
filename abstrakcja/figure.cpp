@@ -1,4 +1,3 @@
-#include <iostream>
 #include "figure.h"
 
 Figure::Figure()
@@ -11,31 +10,33 @@ Figure::~Figure()
     std::cout << "Destruktor figury" << std::endl;
 }
 
-double Figure::getField() const
+auto Figure::getField() const -> double
 {
     return dField;
 }
 
-double Figure::getCircuit() const
+auto Figure::getCircuit() const -> double
 {
     return dCircuit;
 }
 
-std::string Figure::getFigureName() const
+auto Figure::getFigureName() const -> std::string
 {
     return figureName;
 }
 
 void Figure::isPositive(double number, double& variableName)
 {
-    if(number > 0){
+    if (number > 0)
+    {
         variableName = number;
     }
-    else{
-        variableName = 0;
-        std::cerr << "Bład! Wartosc musi byc dodatnia, zmiana wartosci na 0" << std::endl;
+    else
+    {
+        throw std::invalid_argument("Błąd: Wartość musi być dodatnia!");
     }
 }
+
 
 
 

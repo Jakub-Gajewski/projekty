@@ -8,7 +8,7 @@ Vehicle::Vehicle(
     ,const int iMileage_
     ,const int iFuelLevelInPercent_
     ) : sBrand(sBrand_)
-    sModel(sModel_)
+    ,sModel(sModel_)
     ,iProductionYear(iProductionYear_)
     ,iMileage(iMileage_)
     ,iFuelLevelInPercent(iFuelLevelInPercent_)
@@ -45,7 +45,8 @@ void Vehicle::setFuelLevel(int newFuelLevel)
 
 void Vehicle::validateFuelLevel(int newFuelLevel)
 {
-    if (newFuelLevel < 0 || (newFuelLevel > 100))
+    auto isOutOfRange = (newFuelLevel < 0 || newFuelLevel > (100));
+    if (isOutOfRange)
     {
         std::cerr << "Blad: Poziom paliwa musi byc w zakresie 0-100%" << std::endl;
     }
@@ -53,11 +54,11 @@ void Vehicle::validateFuelLevel(int newFuelLevel)
 
 void Vehicle::validateMileage(int newiMileage)
 {
-    if (newiMileage < iMileage)
+    auto isInvalidMileage = (newiMileage < iMileage);
+    if (isInvalidMileage)
     {
         std::cerr << "Blad: Nowy przebieg nie moze byc mniejszy niz obecny!" << std::endl;
-    }
-    else
+    }else
     {
         iMileage = newiMileage;
         std::cout << "Zmieniono przebieg dla " << sBrand << " " << sModel << " na: " << newiMileage << std::endl;

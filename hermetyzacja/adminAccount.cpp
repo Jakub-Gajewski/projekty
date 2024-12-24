@@ -35,7 +35,7 @@ void AdminAccount::blockAccount(UserAccount& user)
     if (!isLoggedIn()) return;
 
     user.setAccountStatus("zablokowane");
-    logAction("Zablokowano konto uzytkownika o loginie: " + user.getLogin());
+    logAction("Zablokowano konto uzytkownika o loginie: ");
 }
 
 void AdminAccount::unblockAccount(UserAccount& user)
@@ -43,14 +43,15 @@ void AdminAccount::unblockAccount(UserAccount& user)
     if (!isLoggedIn()) return;
 
     user.setAccountStatus("aktywny");
-    logAction("Odblokowano konto uzytkownika o loginie: " + user.getLogin());
+    logAction("Odblokowano konto uzytkownika o loginie: ");
 }
+
 
 void AdminAccount::generateUserReport(const UserAccount& user) const
 {
     if (!isLoggedIn()) return;
 
-    std::cout << "Raport o uzytkowniku:" << std::endl;
+    std::cout << "--Raport o uzytkowniku--" << std::endl;
     std::cout << "Login: " << user.getLogin() << std::endl;
     std::cout << "Email: " << user.getEmail() << std::endl;
     std::cout << "Typ konta: " << user.getAccType() << std::endl;
@@ -63,8 +64,10 @@ void AdminAccount::setAccountType(UserAccount& user, const std::string& nType, c
     if (authorize(password))
     {
         user.changeAccountType(nType);
-        logAction("Admin zmienil typ konta uzytkownika na: " + nType);
-    } else
+        auto action = "Admin zmienil typ konta uzytkownika na: " + nType;
+        logAction(action);
+    }
+    else
     {
         std::cout << "Nieautoryzowana próba zmiany typu konta." << std::endl;
     }
@@ -82,5 +85,7 @@ bool AdminAccount::authorize(const std::string& sPassword_) const
 
 void AdminAccount::logAction(const std::string& action)
 {
-    log.push_back(action);
+    auto formattedAction = "[AdminLog] " + action;
+    log.push_back(formattedAction);
 }
+

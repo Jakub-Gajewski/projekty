@@ -1,4 +1,3 @@
-#include <iostream>
 #include "square.h"
 
 Square::Square(
@@ -7,6 +6,7 @@ Square::Square(
 {
     figureName = "Kwadrat";
     isPositive(dSide_, dSide);
+    if (dSide == 0) dSide = 1;
     std::cout << "Utworzono kwadrat" << std::endl;
 }
 
@@ -30,6 +30,11 @@ void Square::displaySides() const
 
 double Square::calculateField()
 {
+    if (dSide <= 0)
+    {
+        std::cerr << "Błąd: Bok musi być dodatni!" << std::endl;
+        return 0;
+    }
     dField = dSide * dSide;
     return dField;
 }

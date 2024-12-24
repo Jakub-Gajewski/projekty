@@ -1,4 +1,3 @@
-#include <iostream>
 #include "rectangle.h"
 
 Rectangle::Rectangle(
@@ -9,8 +8,11 @@ Rectangle::Rectangle(
     figureName = "Prostokat";
     isPositive(dSide1_, dSide1);
     isPositive(dSide2_, dSide2);
+    if (dSide1 == 0) dSide1 = 1;
+    if (dSide2 == 0) dSide2 = 1;
     std::cout << "Utworzono prostokat" << std::endl;
 }
+
 
 Rectangle::~Rectangle()
 {
@@ -34,12 +36,25 @@ void Rectangle::displaySides() const
     std::cout << "Bok 2: " << dSide2 << std::endl;
 }
 
-double Rectangle::calculateField() {
+double Rectangle::calculateField()
+{
+    if (dSide1 <= 0 || dSide2 <= 0)
+    {
+        std::cerr << "Bład: Boki musza być dodatnie!" << std::endl;
+        return 0;
+    }
     dField = dSide1 * dSide2;
     return dField;
 }
 
-double Rectangle::calculateCircuit() {
-    dCircuit = 2 * dSide1 + 2 * dSide2;
+double Rectangle::calculateCircuit()
+{
+    if (dSide1 <= 0 || dSide2 <= 0)
+    {
+        std::cerr << "Bład: Boki musza być dodatnie!" << std::endl;
+        return 0;
+    }
+    dCircuit = 2 * (dSide1 + dSide2);
     return dCircuit;
 }
+

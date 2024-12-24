@@ -1,0 +1,16 @@
+# ninja log v6
+11	1296	7566191516942449	CMakeFiles/dziedziczenie.dir/main.cpp.obj	6c0434e33ec15699
+49	1303	7566191517317809	CMakeFiles/dziedziczenie.dir/Motocycle.cpp.obj	70bf9d99a589a4f2
+67	1344	7566191517493724	CMakeFiles/dziedziczenie.dir/Truck.cpp.obj	29d529bf4575ed43
+31	1378	7566191517139058	CMakeFiles/dziedziczenie.dir/Car.cpp.obj	ec958571ab5c1baf
+16	1511	7567030055470589	CMakeFiles/dziedziczenie.dir/main.cpp.obj	6c0434e33ec15699
+46	1519	7567030055770410	CMakeFiles/dziedziczenie.dir/Motocycle.cpp.obj	70bf9d99a589a4f2
+61	1523	7567030055920319	CMakeFiles/dziedziczenie.dir/Truck.cpp.obj	29d529bf4575ed43
+84	1565	7567030056140185	CMakeFiles/dziedziczenie.dir/Vehicle.cpp.obj	60e7eb4ebd027998
+31	1645	7567030055620502	CMakeFiles/dziedziczenie.dir/Car.cpp.obj	ec958571ab5c1baf
+1646	1923	7567030071764881	dziedziczenie.exe	e9a069bfa8acb639
+18	804	7567063412849922	CMakeFiles/dziedziczenie.dir/Car.cpp.obj	ec958571ab5c1baf
+28	806	7567063412937860	CMakeFiles/dziedziczenie.dir/Truck.cpp.obj	29d529bf4575ed43
+24	808	7567063412906003	CMakeFiles/dziedziczenie.dir/Motocycle.cpp.obj	70bf9d99a589a4f2
+32	840	7567063412977840	CMakeFiles/dziedziczenie.dir/Vehicle.cpp.obj	60e7eb4ebd027998
+840	1089	7567063421058799	dziedziczenie.exe	e9a069bfa8acb639

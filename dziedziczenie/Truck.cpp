@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Truck.h"
 
 Truck::Truck(
@@ -68,9 +67,11 @@ void Truck::logMaintenance() const
 
 void Truck::validateCapacity(int sCapacity)
 {
-    if (sCapacity < 0)
+    auto isInvalidCapacity = (sCapacity < 0);
+    if (isInvalidCapacity)
     {
-        std::cerr << "Bląd: ladownosc nie moze byc mniejsza niz 0!" << std::endl;
+        std::cerr << "Blad: ladownosc nie moze byc mniejsza niz 0!" << std::endl;
     }
 }
+
 

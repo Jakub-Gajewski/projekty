@@ -25,23 +25,29 @@ UserAccount::~UserAccount()
 
 void UserAccount::logIn(std::string login_, std::string password_)
 {
-    if (sLogin == login_ && sPassword == password_ && sAccountStatus != "zablokowane")
+    auto isCorrectLogin = (sLogin == login_);
+    auto isCorrectPassword = (sPassword == password_);
+    auto isAccountBlocked = (sAccountStatus == "zablokowane");
+
+    if (isCorrectLogin && isCorrectPassword && !isAccountBlocked)
     {
         bLogin = true;
         std::cout << "Logowanie pomyslne" << std::endl;
         iFailedAttempts = 0;
-    } else
+    }
+    else
     {
         std::cout << "Nieudane logowanie" << std::endl;
         iFailedAttempts += 1;
 
-        if(iFailedAttempts == 5)
+        if (iFailedAttempts == 5)
         {
             sAccountStatus = "zablokowane";
             std::cerr << "Wpisano 5 razy niepoprawne haslo, konto zostalo zablokowane" << std::endl;
         }
     }
 }
+
 
 void UserAccount::logOut()
 {
@@ -61,15 +67,18 @@ void UserAccount::contributeMoney(int quantity_)
 {
     if (!isLoggedIn()) return;
 
-    if (quantity_ > 0)
+    auto isPositiveAmount = (quantity_ > 0);
+    if (isPositiveAmount)
     {
         iAccountBalance += quantity_;
         std::cout << "Wplata srodkow pomyslna" << std::endl;
-    } else
+    }
+    else
     {
         std::cout << "Kwota wplaty jest rowna/mniejsza od 0" << std::endl;
     }
 }
+
 
 void UserAccount::withdrawMoney(int quantity_)
 {
@@ -154,6 +163,7 @@ bool UserAccount::isLoggedIn() const
 
 bool UserAccount::validateEmail(std::string& email)
 {
-    std::regex emailRegex(R"((\w+)(\.{1}\w+)*@(\w+)(\.\w{2,})+)");
+    auto emailRegex = std::regex(R"((\w+)(\.{1}\w+)*@(\w+)(\.\w{2,})+)");
     return std::regex_match(email, emailRegex);
 }
+

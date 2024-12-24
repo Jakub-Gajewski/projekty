@@ -1,10 +1,8 @@
-#include <iostream>
-#include <string>
 #include "figureFunction.h"
 #include "rectangle.h"
 #include "rightTriangle.h"
 #include "square.h"
-
+#include <iostream>
 
 using namespace std;
 
@@ -22,7 +20,7 @@ int main()
     RightTriangle triangle(5.0, 12.0, 13.0);
     displayFigure(triangle);
 
-    cout << "Zmienianie bokow prostokata..." << endl;
+    cout << "Zmienianie bokow trojkata..." << endl;
     displayFigure(rectangle);
     triangle.setSides();
 

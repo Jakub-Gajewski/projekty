@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Car.h"
 
 Car::Car(
@@ -27,8 +26,14 @@ void Car::setNumberOfGears(const int nNum)
 {
     validateNumberOfGears(nNum);
     iNumberOfGears = nNum;
-    std::cout << "Zmieniono ilosc biegow dla " << sBrand << " " << sModel << " na: " << iNumberOfGears << std::endl;
+
+    auto brand = sBrand;
+    auto model = sModel;
+
+    std::cout << "Zmieniono ilosc biegow dla " << brand << " " << model
+              << " na: " << iNumberOfGears << std::endl;
 }
+
 
 std::string Car::getDrive() const
 {
@@ -42,7 +47,17 @@ std::string Car::getBody() const
 
 void Car::displayInfo() const
 {
-    std::cout << "Samochod: " << sBrand << " " << sModel << ", rok: " << iProductionYear << ", przebieg: " << iMileage << " km, naped: " << sDrive << ", nadwozie: " << sBody << ", liczba biegow: " << iNumberOfGears << std::endl;
+    auto year = iProductionYear;
+    auto mileage = iMileage;
+    auto drive = sDrive;
+    auto body = sBody;
+
+    std::cout << "Samochod: " << sBrand << " " << sModel
+              << ", rok: " << year
+              << ", przebieg: " << mileage << " km"
+              << ", naped: " << drive
+              << ", nadwozie: " << body
+              << ", liczba biegow: " << iNumberOfGears << std::endl;
 }
 
 void Car::logMaintenance() const
@@ -53,8 +68,10 @@ void Car::logMaintenance() const
 
 void Car::validateNumberOfGears(int num)
 {
-    if (num < 1)
+    auto isInvalid = (num < 1);
+    if (isInvalid)
     {
         std::cerr << "Blad: Liczba biegow nie moze byc mniejsza niz 1!" << std::endl;
     }
 }
+

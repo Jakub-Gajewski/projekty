@@ -23,7 +23,7 @@ public:
     double calculateCircuit() override;
 
 private:
-    bool isTriangle(double dSide1, double dSide2, double dSide3) const;
+    bool isRightTriangle() const;
 
 protected:
     double dSide1 = 0.0, dSide2 = 0.0, dSide3 = 0.0;

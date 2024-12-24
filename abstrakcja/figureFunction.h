@@ -1,7 +1,6 @@
 #ifndef FIGUREUTILS_H
 #define FIGUREUTILS_H
 
-#include <iostream>
 #include "figure.h"
 
 void displayFigure(Figure& figure)
