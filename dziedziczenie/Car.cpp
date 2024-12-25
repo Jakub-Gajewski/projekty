@@ -9,10 +9,10 @@ Car::Car(
     ,const std::string& sDrive_
     ,const std::string& sBody_
     ,const int iNumberOfGears_
-    ) : Vehicle(sBrand_, sModel_, iProductionYear_, iMileage_, iFuelLevelInPercent_)
-    ,sDrive(sDrive_)
-    ,sBody(sBody_)
-    ,iNumberOfGears(iNumberOfGears_)
+    ) : Vehicle{sBrand_, sModel_, iProductionYear_, iMileage_, iFuelLevelInPercent_}
+    ,sDrive{sDrive_}
+    ,sBody{sBody_}
+    ,iNumberOfGears{iNumberOfGears_}
 {
     std::cout << "Utworzona obiekt dla samochodu " << sBrand << " " << sModel << ", o nadwoziu " << sBody << std::endl;
 }

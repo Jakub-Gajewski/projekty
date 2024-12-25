@@ -6,7 +6,6 @@ Square::Square(
 {
     figureName = "Kwadrat";
     isPositive(dSide_, dSide);
-    if (dSide == 0) dSide = 1;
     std::cout << "Utworzono kwadrat" << std::endl;
 }
 

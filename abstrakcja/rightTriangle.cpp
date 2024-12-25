@@ -6,17 +6,17 @@ RightTriangle::RightTriangle(
     ,const double dSide3_
     )
 {
-    figureName = "Trójkąt prostokątny";
+    figureName = "Trojkat prostokatny";
     isPositive(dSide1_, dSide1);
     isPositive(dSide2_, dSide2);
     isPositive(dSide3_, dSide3);
 
     if (!isRightTriangle())
     {
-        std::cerr << "Błąd: Podane boki nie tworzą trójkąta prostokątnego!" << std::endl;
+        std::cerr << "Bład: Podane boki nie tworza trojkata prostokatnego!" << std::endl;
         dSide1 = dSide2 = dSide3 = 0;
     }
-    std::cout << "Utworzono trójkąt prostokątny" << std::endl;
+    std::cout << "Utworzono trojkat prostokatny" << std::endl;
 }
 
 RightTriangle::~RightTriangle()
@@ -49,12 +49,12 @@ double RightTriangle::calculateField()
 {
     if (!isRightTriangle())
     {
-        std::cerr << "Błąd: Nie jest to trójkąt prostokątny!" << std::endl;
+        std::cerr << "Bład: Nie jest to trojkat prostokatny!" << std::endl;
         return 0;
     }
 
-    double base = std::max(dSide1, std::max(dSide2, dSide3));
-    double height = (dSide1 == base) ? dSide2 : ((dSide2 == base) ? dSide3 : dSide1);
+    double base{std::max(dSide1, std::max(dSide2, dSide3))};
+    double height{(dSide1 == base) ? dSide2 : ((dSide2 == base) ? dSide3 : dSide1)};
     dField = 0.5 * base * height;
     return dField;
 }

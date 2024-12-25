@@ -16,9 +16,6 @@ public:
     double calculateField() override;
 
     double calculateCircuit() override;
-
-protected:
-    double dSide1 = 0.0, dSide2 = 0.0;
 };
 
 #endif // RECTANGLE_H

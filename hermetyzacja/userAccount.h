@@ -16,6 +16,8 @@ public:
 
     ~UserAccount();
 
+    friend class AdminAccount;
+
     void logIn(std::string login_, std::string password_);
 
     void logOut();
@@ -38,28 +40,22 @@ public:
 
     std::string getLogin() const;
 
-    friend class AdminAccount;
-
 protected:
 
     bool isLoggedIn() const;
-
-    void setAccountStatus(const std::string& newStatus);
-
-    void changeAccountType(const std::string& newType);
 
 private:
     bool validateEmail(std::string& email);
 
 protected:
     bool bLogin = false;
-
-private:
-    std::string sAccountType = "osobiste";
-    std::string sAccountStatus = "aktywny";
+    std::string sAccountType{"osobiste"};
+    std::string sAccountStatus{"aktywne"};
     std::string sEmail;
     std::string sLogin;
     std::string sPassword;
+
+private:
     int iAccountBalance = 0;
     int iFailedAttempts = 0;
     std::string sAccountNumber = 0;

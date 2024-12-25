@@ -5,9 +5,9 @@
 using namespace std;
 
 int main() {
-    Motorcycle M1("Junak", "m15", 50, 2020, 500, "sportowy", 125);
-    Car C2("Audi", "rs7", 2021, 28, 30000, "4x4", "coupe", 8);
-    Truck T3("Man", "tgx", 2021, 39, 1000000, "4x2", "ciagnik siodlowy", 12, 4, "Dostawa zywnosci do sklepu", "36,4t");
+    Motorcycle M1{"Junak", "m15", 50, 2020, 500, "sportowy", 125};
+    Car C2{"Audi", "rs7", 2021, 28, 30000, "4x4", "coupe", 8};
+    Truck T3{"Man", "tgx", 2021, 39, 1000000, "4x2", "ciagnik siodlowy", 12, 4, "Dostawa zywnosci do sklepu", "36,4t"};
     cout << endl;
 
     M1.setFuelLevel(90);

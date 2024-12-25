@@ -10,17 +10,17 @@ Figure::~Figure()
     std::cout << "Destruktor figury" << std::endl;
 }
 
-auto Figure::getField() const -> double
+double Figure::getField() const
 {
     return dField;
 }
 
-auto Figure::getCircuit() const -> double
+double Figure::getCircuit() const
 {
     return dCircuit;
 }
 
-auto Figure::getFigureName() const -> std::string
+std::string Figure::getFigureName() const
 {
     return figureName;
 }
@@ -33,7 +33,8 @@ void Figure::isPositive(double number, double& variableName)
     }
     else
     {
-        throw std::invalid_argument("Błąd: Wartość musi być dodatnia!");
+        variableName = 1.0;
+        std::cerr << "Bład: Wartość musi być dodatnia!" << std::endl;
     }
 }
 

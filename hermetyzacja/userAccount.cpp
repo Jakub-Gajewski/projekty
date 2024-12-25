@@ -8,12 +8,12 @@ UserAccount::UserAccount(
     ,const std::string& sLogin_
     ,const std::string& sPassword_
     ,const std::string& sAccountNumber_
-    ) : sAccountType(sAccountType_)
-    ,sAccountStatus(sAccountStatus_)
-    ,sEmail(sEmail_)
-    ,sLogin(sLogin_)
-    ,sPassword(sPassword_)
-    ,sAccountNumber(sAccountNumber_)
+    ) : sAccountType{sAccountType_}
+    ,sAccountStatus{sAccountStatus_}
+    ,sEmail{sEmail_}
+    ,sLogin{sLogin_}
+    ,sPassword{sPassword_}
+    ,sAccountNumber{sAccountNumber_}
 {
     std::cout << "Utworzono konto uzytkownika" << std::endl;
 }
@@ -25,9 +25,9 @@ UserAccount::~UserAccount()
 
 void UserAccount::logIn(std::string login_, std::string password_)
 {
-    auto isCorrectLogin = (sLogin == login_);
-    auto isCorrectPassword = (sPassword == password_);
-    auto isAccountBlocked = (sAccountStatus == "zablokowane");
+    auto isCorrectLogin{sLogin == login_};
+    auto isCorrectPassword{sPassword == password_};
+    auto isAccountBlocked{sAccountStatus == "zablokowane"};
 
     if (isCorrectLogin && isCorrectPassword && !isAccountBlocked)
     {
@@ -67,7 +67,7 @@ void UserAccount::contributeMoney(int quantity_)
 {
     if (!isLoggedIn()) return;
 
-    auto isPositiveAmount = (quantity_ > 0);
+    auto isPositiveAmount{quantity_ > 0};
     if (isPositiveAmount)
     {
         iAccountBalance += quantity_;
@@ -141,16 +141,6 @@ std::string UserAccount::getLogin() const
     return sLogin;
 }
 
-void UserAccount::setAccountStatus(const std::string& newStatus)
-{
-    sAccountStatus = newStatus;
-}
-
-void UserAccount::changeAccountType(const std::string& newType)
-{
-    sAccountType = newType;
-}
-
 bool UserAccount::isLoggedIn() const
 {
     if (!bLogin)
@@ -163,7 +153,7 @@ bool UserAccount::isLoggedIn() const
 
 bool UserAccount::validateEmail(std::string& email)
 {
-    auto emailRegex = std::regex(R"((\w+)(\.{1}\w+)*@(\w+)(\.\w{2,})+)");
+    auto emailRegex{std::regex(R"((\w+)(\.{1}\w+)*@(\w+)(\.\w{2,})+)")};
     return std::regex_match(email, emailRegex);
 }
 

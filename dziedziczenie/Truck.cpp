@@ -12,10 +12,10 @@ Truck::Truck(
     ,const int iNumberOfWheels_
     ,const std::string& sCargo_
     ,const std::string& sCapacity_
-    ) : Car(sBrand_, sModel_, iProductionYear_, iFuelLevelInPercent_, iMileage_, drive_, sBody_, iNumberOfGears_)
-    ,iNumberOfWheels(iNumberOfWheels_)
-    ,sCargo(sCargo_)
-    ,sCapacity(sCapacity_)
+    ) : Car{sBrand_, sModel_, iProductionYear_, iFuelLevelInPercent_, iMileage_, drive_, sBody_, iNumberOfGears_}
+    ,iNumberOfWheels{iNumberOfWheels_}
+    ,sCargo{sCargo_}
+    ,sCapacity{sCapacity_}
 {
     std::cout << "Utworzono obiekt dla ciezarowki " << sBrand << " " << sModel << ", z ladunkiem: " << sCargo << std::endl;
 }

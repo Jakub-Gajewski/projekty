@@ -7,11 +7,11 @@ Vehicle::Vehicle(
     ,const int iProductionYear_
     ,const int iMileage_
     ,const int iFuelLevelInPercent_
-    ) : sBrand(sBrand_)
-    ,sModel(sModel_)
-    ,iProductionYear(iProductionYear_)
-    ,iMileage(iMileage_)
-    ,iFuelLevelInPercent(iFuelLevelInPercent_)
+    ) : sBrand{sBrand_}
+    ,sModel{sModel_}
+    ,iProductionYear{iProductionYear_}
+    ,iMileage{iMileage_}
+    ,iFuelLevelInPercent{iFuelLevelInPercent_}
 {
     std::cout << "Utworzony obiekt dla pojazdu" << std::endl;
 }

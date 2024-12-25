@@ -9,9 +9,9 @@ Motorcycle::Motorcycle(
     ,const int iFuelLevelInPercent_
     ,const std::string& sType_
     ,const int iEngineCapacity_
-    ) : Vehicle(sBrand_, sModel_, iProductionYear_, iMileage_, iFuelLevelInPercent_)
-    ,sType(sType_)
-    ,iEngineCapacity(iEngineCapacity_)
+    ) : Vehicle{sBrand_, sModel_, iProductionYear_, iMileage_, iFuelLevelInPercent_}
+    ,sType{sType_}
+    ,iEngineCapacity{iEngineCapacity_}
 {
     std::cout << "Utworzono obiekt dla motocyklu " << sBrand << " " << sModel << ", o pojemnosci silnika " << iEngineCapacity << "cc" << std::endl;
     }

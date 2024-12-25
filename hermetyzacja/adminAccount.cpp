@@ -7,8 +7,8 @@ AdminAccount::AdminAccount(
     ,const std::string& sLogin_
     ,const std::string& sPassword_
     ,const int iAdminId_
-    ) : UserAccount(sAccountType_, sAccountStatus_, sEmail_, sLogin_, sPassword_, "0")
-    ,iAdminId(iAdminId_)
+    ) : UserAccount{sAccountType_, sAccountStatus_, sEmail_, sLogin_, sPassword_, "0"}
+    ,iAdminId{iAdminId_}
 {
     std::cout << "Utworzono konto admina" << std::endl;
 }
@@ -34,16 +34,18 @@ void AdminAccount::blockAccount(UserAccount& user)
 {
     if (!isLoggedIn()) return;
 
-    user.setAccountStatus("zablokowane");
-    logAction("Zablokowano konto uzytkownika o loginie: ");
+    user.sAccountStatus = "zablokowane";
+    auto addToLog{"Zablokowano konto uzytkownika o loginie: " + user.sLogin};
+    logAction(addToLog);
 }
 
 void AdminAccount::unblockAccount(UserAccount& user)
 {
     if (!isLoggedIn()) return;
 
-    user.setAccountStatus("aktywny");
-    logAction("Odblokowano konto uzytkownika o loginie: ");
+    user.sAccountStatus = "aktywne";
+    auto addToLog{"Odblokowano konto uzytkownika o loginie: " + user.sLogin};
+    logAction(addToLog);
 }
 
 
@@ -52,24 +54,24 @@ void AdminAccount::generateUserReport(const UserAccount& user) const
     if (!isLoggedIn()) return;
 
     std::cout << "--Raport o uzytkowniku--" << std::endl;
-    std::cout << "Login: " << user.getLogin() << std::endl;
-    std::cout << "Email: " << user.getEmail() << std::endl;
-    std::cout << "Typ konta: " << user.getAccType() << std::endl;
-    std::cout << "Status konta: " << user.getAccStatus() << std::endl;
-    std::cout << "Saldo: " << user.getBalance() << std::endl;
+    std::cout << "Login: " << user.sLogin << std::endl;
+    std::cout << "Email: " << user.sEmail << std::endl;
+    std::cout << "Typ konta: " << user.sAccountType << std::endl;
+    std::cout << "Status konta: " << user.sAccountStatus << std::endl;
+    std::cout << "Saldo: " << user.iAccountBalance << std::endl;
 }
 
 void AdminAccount::setAccountType(UserAccount& user, const std::string& nType, const std::string& password)
 {
     if (authorize(password))
     {
-        user.changeAccountType(nType);
-        auto action = "Admin zmienil typ konta uzytkownika na: " + nType;
-        logAction(action);
+        user.sAccountType = nType;
+        auto addToLog = "Admin zmienil typ konta uzytkownika na: " + nType;
+        logAction(addToLog);
     }
     else
     {
-        std::cout << "Nieautoryzowana próba zmiany typu konta." << std::endl;
+        std::cout << "Nieautoryzowana proba zmiany typu konta." << std::endl;
     }
 }
 
@@ -85,7 +87,7 @@ bool AdminAccount::authorize(const std::string& sPassword_) const
 
 void AdminAccount::logAction(const std::string& action)
 {
-    auto formattedAction = "[AdminLog] " + action;
+    auto formattedAction{"[AdminLog] " + action};
     log.push_back(formattedAction);
 }
 

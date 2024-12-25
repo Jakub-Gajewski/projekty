@@ -19,7 +19,7 @@ public:
     double calculateCircuit() override;
 
 protected:
-    double dSide=0.0;
+    double dSide{0.0};
 };
 
 #endif // SQUARE_H

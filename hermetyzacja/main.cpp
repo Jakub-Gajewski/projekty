@@ -2,8 +2,8 @@
 #include "userAccount.h"
 
 int main() {
-    AdminAccount adm1("admin", "aktywny", "admin@example.com", "admin123", "admin76", 1);
-    UserAccount usr1("osobiste", "aktywny", "user@example.com", "user123", "userpass", "12345678901234567890");
+    AdminAccount adm1{"admin", "aktywny", "admin@example.com", "admin123", "admin76", 1};
+    UserAccount usr1{"osobiste", "aktywny", "user@example.com", "user123", "userpass", "12345678901234567890"};
 
     std::cout << "\n=== Logowanie uzytkownika i admina ===" << std::endl;
     usr1.logIn("user123", "userpass");

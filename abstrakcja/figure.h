@@ -21,7 +21,7 @@ protected:
     void isPositive(double number, double& variableName);
 
 protected:
-    double dField = 0.0, dCircuit = 0.0;
+    double dField{0.0}, dCircuit{0.0}, dSide1{0.0}, dSide2{0.0}, dSide3{0.0};
     std::string figureName;
 };
 

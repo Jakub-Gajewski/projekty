@@ -7,9 +7,9 @@ class RightTriangle : public Figure{
 
 public:
     RightTriangle(
-        double dSide1_,
-        double dSide2_,
-        double dSide3_
+        double dSide1_
+        ,double dSide2_
+        ,double dSide3_
         );
 
     ~RightTriangle();
@@ -23,10 +23,7 @@ public:
     double calculateCircuit() override;
 
 private:
-    bool isRightTriangle() const;
-
-protected:
-    double dSide1 = 0.0, dSide2 = 0.0, dSide3 = 0.0;
+    bool isRightTriangle() const;   
 };
 
 #endif // RIGHTTRIANGLE_H
