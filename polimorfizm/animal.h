@@ -5,7 +5,14 @@
 
 class Animal{
 public:
-    Animal();
+    Animal(
+        const std::string& sName_
+        ,int iAge_
+        ,double dWeight_
+        ,const std::string& sSpecies_
+        ,const std::string& sHabitat_
+        ,const std::string& sDiet_
+        );
 
     virtual ~Animal();
 
@@ -22,7 +29,7 @@ protected:
 public:
     std::string sName;
     int iAge;
-    double dWeight{0.0};
+    double dWeight{0.0}; //kilogramy
     std::string sSpecies;
     std::string sHabitat;
     std::string sDiet;

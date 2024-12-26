@@ -1,8 +1,20 @@
 #include "animal.h"
 
-Animal::Animal()
+Animal::Animal(
+    const std::string& sName_
+    ,int iAge_
+    ,double dWeight_
+    ,const std::string& sSpecies_
+    ,const std::string& sHabitat_
+    ,const std::string& sDiet_
+    ) : sName{sName_},
+    iAge{checkAge(iAge_) ? iAge_ : 0},
+    dWeight{checkWeight(dWeight_) ? dWeight_ : 1.0},
+    sSpecies{sSpecies_},
+    sHabitat{sHabitat_},
+    sDiet{sDiet_}
 {
-    std::cout << "Utworzono zmierze" << std::endl;
+    std::cout << "Utworzono zwierze" << std::endl;
 }
 
 Animal::~Animal()

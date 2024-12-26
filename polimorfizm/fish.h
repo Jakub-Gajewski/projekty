@@ -1,22 +1,22 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef FISH_H
+#define FISH_H
 
 #include "animal.h"
 
-class Dog : public Animal{
+class Fish : public Animal{
 public:
-    Dog(
+    Fish(
         const std::string& sName_
         ,int iAge_
         ,double dWeight_
         ,const std::string& sSpecies_
         ,const std::string& sHabitat_
         ,const std::string& sDiet_
-        ,const std::string& sBreed_
-        ,bool bIsAggressive_
+        ,const std::string& sWaterType_
+        ,const std::string& sSwimDepth_
         );
 
-    ~Dog();
+    ~Fish();
 
     void speak() const override;
     void move() override;
@@ -25,11 +25,10 @@ public:
     void displayInfo() const override final;
 
     void wagTail() const;
-    void fetch(const std::string& item);
 
 public:
-    std::string sBreed;
-    bool bIsAggressive;
+    std::string sWaterType;
+    std::string sSwimDepth;//metry
 };
 
-#endif // DOG_H
+#endif // FISH_H
