@@ -5,7 +5,10 @@
 
 class Rectangle : public Figure {
 public:
-    Rectangle(double dSide1_, double dSide2_);
+    Rectangle(
+        double dSide1_
+        ,double dSide2_
+        );
 
     ~Rectangle() override;
 

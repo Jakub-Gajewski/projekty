@@ -5,9 +5,10 @@ project(dziedziczenie LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(dziedziczenie main.cpp
+add_executable(dziedziczenie 
     Car.h
     Car.cpp
+    main.cpp
     Motorcycle.h
     Motocycle.cpp
     Truck.h

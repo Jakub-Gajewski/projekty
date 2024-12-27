@@ -5,9 +5,10 @@ project(abstrakcja LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(abstrakcja main.cpp
+add_executable(abstrakcja
     figure.h
     figure.cpp
+    main.cpp
     rectangle.h
     rectangle.cpp
     rightTriangle.h
