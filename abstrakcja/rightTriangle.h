@@ -2,14 +2,15 @@
 #define RIGHTTRIANGLE_H
 
 #include "figure.h"
+#include <string>
 
 class RightTriangle : public Figure{
 
 public:
     RightTriangle(
-        double dSide1_
-        ,double dSide2_
-        ,double dSide3_
+        double d_Side1_
+        ,double d_Side2_
+        ,double d_Side3_
         );
 
     ~RightTriangle();
@@ -23,7 +24,10 @@ public:
     double calculateCircuit() override;
 
 private:
-    bool isRightTriangle() const;   
+    bool isRightTriangle() const;
+
+protected:
+    double d_Side1{0.0}, d_Side2{0.0}, d_Side3{0.0};
 };
 
 #endif // RIGHTTRIANGLE_H

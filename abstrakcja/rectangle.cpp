@@ -1,60 +1,63 @@
 #include "rectangle.h"
+#include <iostream>
 
 Rectangle::Rectangle(
-    double dSide1_
-    ,double dSide2_
+    double d_Side1_
+    ,double d_Side2_
     )
 {
-    figureName = "Prostokat";
-    isPositive(dSide1_, dSide1);
-    isPositive(dSide2_, dSide2);
-    std::cout << "Utworzono prostokat" << std::endl;
+    s_figureName = "Rectangle";
+    isPositive(d_Side1_, d_Side1);
+    isPositive(d_Side2_, d_Side2);
+    std::cout << "Constructor of a Rectangle" << std::endl;
 }
 
 
 Rectangle::~Rectangle()
 {
-    std::cout << "Destruktor prostokata" << std::endl;
+    std::cout << "Destructor of a Rectangle" << std::endl;
 }
 
 void Rectangle::setSides()
 {
     double side;
 
-    std::cout << "Podaj 1 bok: ";
+    std::cout << "Enter 1 side: ";
     std::cin >> side;
-    isPositive(side, dSide1);
+    std::cout << std::endl;
+    isPositive(side, d_Side1);
 
-    std::cout << "Podaj 2 bok: ";
+    std::cout << "Enter 2 side: ";
     std::cin >> side;
-    isPositive(side, dSide2);
+    std::cout << std::endl;
+    isPositive(side, d_Side2);
 }
 
 void Rectangle::displaySides() const
 {
-    std::cout << "Bok 1: " << dSide1 << std::endl;
-    std::cout << "Bok 2: " << dSide2 << std::endl;
+    std::cout << "Enter 1: " << d_Side1 << std::endl;
+    std::cout << "Enter 2: " << d_Side2 << std::endl;
 }
 
 double Rectangle::calculateField()
 {
-    if (dSide1 <= 0 || dSide2 <= 0)
+    if (d_Side1 <= 0 || d_Side2 <= 0)
     {
-        std::cerr << "Bład: Boki musza być dodatnie!" << std::endl;
+        std::cerr << "Error: Side must be positive!" << std::endl;
         return 0;
     }
-    dField = dSide1 * dSide2;
-    return dField;
+    d_Field = d_Side1 * d_Side2;
+    return d_Field;
 }
 
 double Rectangle::calculateCircuit()
 {
-    if (dSide1 <= 0 || dSide2 <= 0)
+    if (d_Side1 <= 0 || d_Side2 <= 0)
     {
-        std::cerr << "Bład: Boki musza być dodatnie!" << std::endl;
+        std::cerr << "Error: Side must be positive!" << std::endl;
         return 0;
     }
-    dCircuit = 2 * (dSide1 + dSide2);
-    return dCircuit;
+    d_Circuit = 2 * (d_Side1 + d_Side2);
+    return d_Circuit;
 }
 

@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(dziedziczenie 
     Car.h
     Car.cpp
+    ICarriage.h
     main.cpp
     Motorcycle.h
     Motocycle.cpp
@@ -15,7 +16,6 @@ add_executable(dziedziczenie
     Truck.cpp
     Vehicle.h
     Vehicle.cpp
-
 )
 
 include(GNUInstallDirs)

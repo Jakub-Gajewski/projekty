@@ -2,18 +2,19 @@
 #define BIRD_H
 
 #include "animal.h"
+#include <string>
 
 class Bird : public Animal{
 public:
     Bird(
-        const std::string& sName_
-        ,int iAge_
-        ,double dWeight_
-        ,const std::string& sSpecies_
-        ,const std::string& sHabitat_
-        ,const std::string& sDiet_
-        ,float fWingsSpan_
-        ,bool bCanFly_
+        const std::string& s_Name_
+        ,int i_Age_
+        ,double d_WeightInKilograms_
+        ,const std::string& s_Species_
+        ,const std::string& s_Habitat_
+        ,const std::string& s_Diet_
+        ,float f_WingsSpanInCentimeter_
+        ,bool b_CanFly_
         );
 
     ~Bird();
@@ -27,11 +28,11 @@ public:
     void wagWings() const;
 
 private:
-    bool checkWingsSpan(const int span);
+    bool checkWingsSpan(const int i_span);
 
 public:
-    float fWingsSpan; //centymetry
-    bool bCanFly;
+    float f_WingsSpanInCentimeter;
+    bool b_CanFly;
 };
 
 #endif // BIRD_H

@@ -2,30 +2,31 @@
 #define TRUCK_H
 
 #include "Car.h"
+#include <string>
 
 class Truck : public Car {
 public:
     Truck(
-        const std::string& sBrand_
-        ,const std::string& sModel_
-        ,const int iProductionYear_
-        ,const int iMileage_
-        ,const int iFuelLevelInPercent_
-        ,const std::string& drive_
-        ,const std::string& sBody_
-        ,const int iNumberOfGears_
-        ,const int iNumberOfWheels_
-        ,const std::string& sCargo_
-        ,const std::string& sCapacity_
+        const std::string& s_Brand_
+        ,const std::string& s_Model_
+        ,const int i_ProductionYear_
+        ,const int i_Mileage_
+        ,const int i_FuelLevelInPercent_
+        ,const std::string& s_Drive_
+        ,const std::string& s_Body_
+        ,const int i_NumberOfGears_
+        ,const int i_NumberOfWheels_
+        ,const std::string& s_Cargo_
+        ,const float f_CapacityInTons_
         );
 
     ~Truck() override;
 
-    void setCargo(const std::string& nsCargo);
+    void setCargo(const std::string& s_nCargo);
 
-    void setCapacity(const std::string& nsCapacity);
+    void setCapacity(const float f_nCapacity);
 
-    std::string getCapacity() const;
+    float getCapacity() const;
 
     std::string getCargo() const;
 
@@ -37,14 +38,14 @@ protected:
 private:
     void logMaintenance() const override;
 
-    void validateCapacity(int sCapacity);
+    float validateCapacity(float f_Capacity_);
 
 protected:
-    int iNumberOfWheels;
-    std::string sCargo;
+    int i_NumberOfWheels;
+    std::string s_Cargo;
 
 private:
-    std::string sCapacity;
+    float f_CapacityInTons;
 };
 
 

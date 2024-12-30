@@ -1,36 +1,36 @@
 #ifndef USERACCOUNT_H
 #define USERACCOUNT_H
 
-#include <iostream>
+#include <string>
 
 class UserAccount {
 public:
     UserAccount(
-        const std::string& sAccountType_
-        ,const std::string& sAccountStatus_
-        ,const std::string& sEmail_
-        ,const std::string& sLogin_
-        ,const std::string& sPassword_
-        ,const std::string& sAccountNumber_
+        const std::string& s_AccountType_
+        ,const std::string& s_AccountStatus_
+        ,const std::string& s_Email_
+        ,const std::string& s_Login_
+        ,const std::string& s_Password_
+        ,const std::string& s_AccountNumber_
         );
 
     ~UserAccount();
 
     friend class AdminAccount;
 
-    void logIn(std::string login_, std::string password_);
+    void logIn(std::string s_login_, std::string s_password_);
 
     void logOut();
 
-    void setPassword(std::string nPass);
+    void setPassword(std::string s_nPass);
 
-    void contributeMoney(int quantity_);
+    void contributeMoney(int i_quantity_);
 
-    void withdrawMoney(int quantity_);
+    void withdrawMoney(int i_quantity_);
 
     int getBalance() const;
 
-    void changeEmail(std::string newEmail);
+    void changeEmail(std::string s_newEmail);
 
     std::string getAccType() const;
 
@@ -45,20 +45,20 @@ protected:
     bool isLoggedIn() const;
 
 private:
-    bool validateEmail(std::string& email);
+    bool validateEmail(std::string& s_email_);
 
 protected:
-    bool bLogin = false;
-    std::string sAccountType{"osobiste"};
-    std::string sAccountStatus{"aktywne"};
-    std::string sEmail;
-    std::string sLogin;
-    std::string sPassword;
+    bool b_Login = false;
+    std::string s_AccountType{"personal "};
+    std::string s_AccountStatus{"active"};
+    std::string s_Email;
+    std::string s_Login;
+    std::string s_Password;
 
 private:
-    int iAccountBalance = 0;
-    int iFailedAttempts = 0;
-    std::string sAccountNumber = 0;
+    int i_AccountBalance = 0;
+    int i_FailedAttempts = 0;
+    std::string s_AccountNumber = 0;
 };
 
 #endif // USERACCOUNT_H

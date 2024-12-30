@@ -1,47 +1,48 @@
 #include "square.h"
+#include <iostream>
 
 Square::Square(
-    const double dSide_
+    const double d_Side_
     )
 {
-    figureName = "Kwadrat";
-    isPositive(dSide_, dSide);
-    std::cout << "Utworzono kwadrat" << std::endl;
+    s_figureName = "Square";
+    isPositive(d_Side_, d_Side);
+    std::cout << "Constructor of a Square" << std::endl;
 }
 
 Square::~Square()
 {
-    std::cout << "Destruktor kwadratu" << std::endl;
+    std::cout << "Destructor of a Square" << std::endl;
 }
 
 void Square::setSides()
 {
-    std::cout << "Podaj bok: " << std::endl;
-    std::cin >> dSide;
+    std::cout << "Enter side: " << std::endl;
+    std::cin >> d_Side;
 
-    isPositive(dSide, dSide);
+    isPositive(d_Side, d_Side);
 }
 
 void Square::displaySides() const
 {
-    std::cout << "Bok : " << dSide << std::endl;
+    std::cout << "Side : " << d_Side << std::endl;
 }
 
 double Square::calculateField()
 {
-    if (dSide <= 0)
+    if (d_Side <= 0)
     {
-        std::cerr << "Błąd: Bok musi być dodatni!" << std::endl;
+        std::cerr << "Erroe: Side must be positive!" << std::endl;
         return 0;
     }
-    dField = dSide * dSide;
-    return dField;
+    d_Field = d_Side * d_Side;
+    return d_Field;
 }
 
 double Square::calculateCircuit()
 {
-    dCircuit = 4 * dSide;
-    return dCircuit;
+    d_Circuit = 4 * d_Side;
+    return d_Circuit;
 }
 
 

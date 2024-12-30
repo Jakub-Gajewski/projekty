@@ -1,53 +1,53 @@
 #include "Motorcycle.h"
-
+#include <iostream>
 
 Motorcycle::Motorcycle(
-    const std::string& sBrand_
-    ,const std::string& sModel_
-    ,const int iProductionYear_
-    ,const int iMileage_
-    ,const int iFuelLevelInPercent_
-    ,const std::string& sType_
-    ,const int iEngineCapacity_
-    ) : Vehicle{sBrand_, sModel_, iProductionYear_, iMileage_, iFuelLevelInPercent_}
-    ,sType{sType_}
-    ,iEngineCapacity{iEngineCapacity_}
+    const std::string& s_Brand_
+    ,const std::string& s_Model_
+    ,const int i_ProductionYear_
+    ,const int i_Mileage_
+    ,const int i_FuelLevelInPercent_
+    ,const std::string& s_Type_
+    ,const int i_EngineCapacity_
+    ) : Vehicle{s_Brand_, s_Model_, i_ProductionYear_, i_Mileage_, i_FuelLevelInPercent_}
+    ,s_Type{s_Type_}
+    ,i_EngineCapacity{i_EngineCapacity_}
 {
-    std::cout << "Utworzono obiekt dla motocyklu " << sBrand << " " << sModel << ", o pojemnosci silnika " << iEngineCapacity << "cc" << std::endl;
+    std::cout << "Constructor of a motocycle " << s_Brand << " " << s_Model << ", with engine capacity " << i_EngineCapacity << "cc" << std::endl;
     }
 
 Motorcycle::~Motorcycle()
 {
-    std::cout << "Destruktor dla motocyklu " << sBrand << " " << sModel << std::endl;
+    std::cout << "Destructor of a motocycle " << s_Brand << " " << s_Model << std::endl;
 }
 
 void Motorcycle::displayInfo() const
 {
-    auto fuelLevel = iFuelLevelInPercent;
-    auto engineCapacity = iEngineCapacity;
+    auto fuelLevel = i_FuelLevelInPercent;
+    auto engineCapacity = i_EngineCapacity;
 
-    std::cout << "Marka: " << sBrand << ", Model: " << sModel
-              << ", Rok produkcji: " << iProductionYear
-              << ", Przebieg: " << iMileage
-              << ", Poziom paliwa: " << fuelLevel << "%"
-              << ", Typ: " << sType
-              << ", Pojemność silnika: " << engineCapacity << "cm^3"
+    std::cout << "Brand: " << s_Brand << ", Model: " << s_Model
+              << ", Production year: " << i_ProductionYear
+              << ", Mileage: " << i_Mileage
+              << ", Fuel level: " << fuelLevel << "%"
+              << ", Type: " << s_Type
+              << ", Engine capacity : " << engineCapacity << "cm^3"
               << std::endl;
 }
 
 
 std::string Motorcycle::getType() const
 {
-    return sType;
+    return s_Type;
 }
 
 int Motorcycle::getEngineCapacity() const
 {
-    return iEngineCapacity;
+    return i_EngineCapacity;
 }
 
 void Motorcycle::logMaintenance() const
 {
-    std::cout << "Logowanie serwisowania motocykla: " << sBrand << " " << sModel << std::endl;
+    std::cout << "Motocycle maintenance information: " << s_Brand << " " << s_Model << std::endl;
 }
 

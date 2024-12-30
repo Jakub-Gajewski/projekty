@@ -1,45 +1,46 @@
 #include "animal.h"
+#include <iostream>
 
 Animal::Animal(
-    const std::string& sName_
-    ,int iAge_
-    ,double dWeight_
-    ,const std::string& sSpecies_
-    ,const std::string& sHabitat_
-    ,const std::string& sDiet_
-    ) : sName{sName_},
-    iAge{checkAge(iAge_) ? iAge_ : 0},
-    dWeight{checkWeight(dWeight_) ? dWeight_ : 1.0},
-    sSpecies{sSpecies_},
-    sHabitat{sHabitat_},
-    sDiet{sDiet_}
+    const std::string& s_Name_
+    ,int i_Age_
+    ,double d_WeightInKilograms_
+    ,const std::string& s_Species_
+    ,const std::string& s_Habitat_
+    ,const std::string& s_Diet_
+    ) : s_Name{s_Name_},
+    i_Age{checkAge(i_Age_) ? i_Age_ : 0},
+    d_WeightInKilograms{checkWeight(d_WeightInKilograms_) ? d_WeightInKilograms_ : 1.0},
+    s_Species{s_Species_},
+    s_Habitat{s_Habitat_},
+    s_Diet{s_Diet_}
 {
-    std::cout << "Utworzono zwierze" << std::endl;
+    std::cout << "Constructor of a animal" << std::endl;
 }
 
 Animal::~Animal()
 {
-    std::cout << "Destruktor zwierzecia" << std::endl;
+    std::cout << "Destructor of a animal" << std::endl;
 }
 
-bool Animal::checkAge(const int age)
+bool Animal::checkAge(const int i_age)
 {
-    if(age < 0)
+    if(i_age < 0)
     {
         return false;
-        std::cerr << "Wiek nie moze byc mniejszy od 0, poczekaj az sie urodzi!" << std::endl;
+        std::cerr << "Age cannot be less than 0, wait until they are born!" << std::endl;
     }else
     {
         return true;
     }
 }
 
-bool Animal::checkWeight(const int weight)
+bool Animal::checkWeight(const int i_weight)
 {
-    if(weight <= 0)
+    if(i_weight <= 0)
     {
         return false;
-        std::cerr << "Waga nie moze byc rowna 0, musi cos zjesc" << std::endl;
+        std::cerr << "Weight cannot be 0, it needs to eat something" << std::endl;
     }else
     {
         return true;

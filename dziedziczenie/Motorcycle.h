@@ -2,17 +2,18 @@
 #define MOTORCYCLE_H
 
 #include "Vehicle.h"
+#include <string>
 
 class Motorcycle : public Vehicle {
 public:
     Motorcycle(
-        const std::string& sBrand_
-        ,const std::string& sModel_
-        ,const int iProductionYear_
-        ,const int iMileage_
-        ,const int iFuelLevelInPercent_
-        ,const std::string& sType_
-        ,const int iEngineCapacity_
+        const std::string& s_Brand_
+        ,const std::string& s_Model_
+        ,const int i_ProductionYear_
+        ,const int i_Mileage_
+        ,const int i_FuelLevelInPercent_
+        ,const std::string& s_Type_
+        ,const int i_EngineCapacity_
         );
 
     ~Motorcycle();
@@ -28,10 +29,10 @@ protected:
 
 
 protected:
-    std::string sType;
+    std::string s_Type;
 
 private:
-    int iEngineCapacity;
+    int i_EngineCapacity;
 };
 
 #endif // MOTORCYCLE_H

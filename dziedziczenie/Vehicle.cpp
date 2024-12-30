@@ -1,66 +1,73 @@
-#include <iostream>
 #include "Vehicle.h"
+#include <iostream>
 
 Vehicle::Vehicle(
-    const std::string& sBrand_
-    ,const std::string& sModel_
-    ,const int iProductionYear_
-    ,const int iMileage_
-    ,const int iFuelLevelInPercent_
-    ) : sBrand{sBrand_}
-    ,sModel{sModel_}
-    ,iProductionYear{iProductionYear_}
-    ,iMileage{iMileage_}
-    ,iFuelLevelInPercent{iFuelLevelInPercent_}
+    const std::string& s_Brand_
+    ,const std::string& s_Model_
+    ,const int i_ProductionYear_
+    ,const int i_Mileage_
+    ,const int i_FuelLevelInPercent_
+    ) : s_Brand{s_Brand_}
+    ,s_Model{s_Model_}
+    ,i_ProductionYear{i_ProductionYear_}
+    ,i_Mileage{i_Mileage_}
+    ,i_FuelLevelInPercent{i_FuelLevelInPercent_}
 {
-    std::cout << "Utworzony obiekt dla pojazdu" << std::endl;
+    std::cout << "Constructor of a vehicle" << std::endl;
 }
 
 Vehicle::~Vehicle()
 {
-    std::cout << "Destruktor dla pojazdu" << std::endl;
+    std::cout << "Destructor of a vehicle" << std::endl;
 }
 
-void Vehicle::setMileage(const int nMil)
+void Vehicle::setMileage(const int i_newiMileage)
 {
-    validateMileage(nMil);
+    validateMileage(i_newiMileage);
 }
 
 int Vehicle::getMileage() const
 {
-    return iMileage;
+    return i_Mileage;
 }
 
 std::string Vehicle::getBrand() const
 {
-    return sBrand;
+    return s_Brand;
 }
 
-void Vehicle::setFuelLevel(int newFuelLevel)
+void Vehicle::setFuelLevel(int i_newFuelLevel)
 {
-    validateFuelLevel(newFuelLevel);
-    iFuelLevelInPercent = newFuelLevel;
-    std::cout << "Poziom paliwa w pojezdzie " << sBrand << " " << sModel << " zmieniony na: " << iFuelLevelInPercent << "%" << std::endl;
+    i_FuelLevelInPercent = validateFuelLevel(i_newFuelLevel);
+    std::cout << "Fuel level in vehicle " << s_Brand << " " << s_Model << " changing to: " << i_FuelLevelInPercent << "%" << std::endl;
 }
 
-void Vehicle::validateFuelLevel(int newFuelLevel)
+int Vehicle::validateFuelLevel(int i_newFuelLevel)
 {
-    auto isOutOfRange = (newFuelLevel < 0 || newFuelLevel > (100));
-    if (isOutOfRange)
-    {
-        std::cerr << "Blad: Poziom paliwa musi byc w zakresie 0-100%" << std::endl;
+    auto isUp{i_newFuelLevel > (100)};
+    auto isDown{i_newFuelLevel < 0};
+    if (isUp) {
+        std::cerr << "Error: Fuel level must be in range between 0 and 100%" << std::endl;
+        return 100;
+    }
+    else if(isDown) {
+        std::cerr << "Error: Fuel level must be in range between 0 and 100%" << std::endl;
+        return 0;
+    }
+    else {
+        return i_newFuelLevel;
     }
 }
 
-void Vehicle::validateMileage(int newiMileage)
+void Vehicle::validateMileage(int i_newiMileage)
 {
-    auto isInvalidMileage = (newiMileage < iMileage);
+    auto isInvalidMileage = (i_newiMileage < i_Mileage);
     if (isInvalidMileage)
     {
-        std::cerr << "Blad: Nowy przebieg nie moze byc mniejszy niz obecny!" << std::endl;
+        std::cerr << "Error: New mileage can't by less than the curren one!" << std::endl;
     }else
     {
-        iMileage = newiMileage;
-        std::cout << "Zmieniono przebieg dla " << sBrand << " " << sModel << " na: " << newiMileage << std::endl;
+        i_Mileage = i_newiMileage;
+        std::cout << "Changing mileage for " << s_Brand << " " << s_Model << " to: " << i_newiMileage << std::endl;
     }
 }

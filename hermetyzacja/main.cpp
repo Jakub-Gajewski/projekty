@@ -1,50 +1,52 @@
 #include "adminAccount.h"
 #include "userAccount.h"
+#include <iostream>
 
 int main() {
-    AdminAccount adm1{"admin", "aktywny", "admin@example.com", "admin123", "admin76", 1};
-    UserAccount usr1{"osobiste", "aktywny", "user@example.com", "user123", "userpass", "12345678901234567890"};
+    AdminAccount admin{"admin", "active", "admin@example.com", "admin123", "admin76", 1};
+    UserAccount user{"personal", "active", "user@example.com", "user123", "userpass", "12345678901234567890"};
 
-    std::cout << "\n=== Logowanie uzytkownika i admina ===" << std::endl;
-    usr1.logIn("user123", "userpass");
-    adm1.logIn("admin123", "admin76");
+    std::cout << "\n=== User and Admin Login ===" << std::endl;
+    user.logIn("user123", "userpass");
+    admin.logIn("admin123", "admin76");
 
-    std::cout << "\n=== Operacje na koncie uzytkownika ===" << std::endl;
-    std::cout << "Stan konta uzytkownika przed wplata: " << usr1.getBalance() << " PLN" << std::endl;
+    std::cout << "\n=== User Account Operations ===" << std::endl;
+    std::cout << "User account balance before deposit: " << user.getBalance() << " PLN" << std::endl;
 
-    usr1.contributeMoney(200);
-    std::cout << "Stan konta po wplacie: " << usr1.getBalance() << " PLN" << std::endl;
+    user.contributeMoney(200);
+    std::cout << "Account balance after deposit: " << user.getBalance() << " PLN" << std::endl;
 
-    usr1.withdrawMoney(50);
-    std::cout << "Stan konta po wyplacie: " << usr1.getBalance() << " PLN" << std::endl;
+    user.withdrawMoney(50);
+    std::cout << "Account balance after withdrawal: " << user.getBalance() << " PLN" << std::endl;
 
-    std::cout << "\n=== Uzytkownik zmienia e-mail ===" << std::endl;
-    usr1.changeEmail("new_user@example.com");
+    std::cout << "\n=== User Changes Email ===" << std::endl;
+    user.changeEmail("new_user@example.com");
 
-    std::cout << "\n=== Wylogowanie uzytkownika ===" << std::endl;
-    usr1.logOut();
+    std::cout << "\n=== User Logout ===" << std::endl;
+    user.logOut();
 
-    std::cout << "\n=== Admin blokuje konto uzytkownika ===" << std::endl;
-    adm1.blockAccount(usr1);
+    std::cout << "\n=== Admin Blocks User Account ===" << std::endl;
+    admin.blockAccount(user);
 
-    std::cout << "\n=== Proba logowania zablokowanego uzytkownika ===" << std::endl;
-    usr1.logIn("user123", "userpass");
+    std::cout << "\n=== Attempt to Log In with Blocked User Account ===" << std::endl;
+    user.logIn("user123", "userpass");
 
-    std::cout << "\n=== Admin odblokowuje konto uzytkownika ===" << std::endl;
-    adm1.unblockAccount(usr1);
+    std::cout << "\n=== Admin Unblocks User Account ===" << std::endl;
+    admin.unblockAccount(user);
 
-    std::cout << "\n=== Proba logowania odblokowanego uzytkownika ===" << std::endl;
-    usr1.logIn("user123", "userpass");
+    std::cout << "\n=== Attempt to Log In with Unblocked User Account ===" << std::endl;
+    user.logIn("user123", "userpass");
 
-    std::cout << "\n=== Admin generuje raport o uzytkowniku ===" << std::endl;
-    adm1.generateUserReport(usr1);
+    std::cout << "\n=== Admin Generates User Report ===" << std::endl;
+    admin.generateUserReport(user);
 
-    std::cout << "\n=== Historia dzialan admina ===" << std::endl;
-    adm1.displayLog();
+    std::cout << "\n=== Admin Action History ===" << std::endl;
+    admin.displayLog();
 
-    std::cout << "\n=== Wylogowanie uzytkownika i admina ===" << std::endl;
-    usr1.logOut();
-    adm1.logOut();
+    std::cout << "\n=== User and Admin Logout ===" << std::endl;
+    user.logOut();
+    admin.logOut();
+
 
     return 0;
 }

@@ -2,23 +2,24 @@
 #define CAR_H
 
 #include "Vehicle.h"
+#include <string>
 
 class Car : public Vehicle {
 public:
     Car(
-        const std::string& sBrand_
-        ,const std::string& sModel_
-        ,const int iProductionYear_
-        ,const int iMileage_
-        ,const int iFuelLevelInPercent_
-        ,const std::string& sDrive_
-        ,const std::string& sBody_
-        ,const int iNumberOfGears_
+        const std::string& s_Brand_
+        ,const std::string& s_Model_
+        ,const int i_ProductionYear_
+        ,const int i_Mileage_
+        ,const int i_FuelLevelInPercent_
+        ,const std::string& s_Drive_
+        ,const std::string& s_Body_
+        ,const int i_NumberOfGears_
         );
 
     ~Car() ;
 
-    void setNumberOfGears(const int nNum);
+    void setNumberOfGears(const int i_nNumberOfGears_);
 
     std::string getDrive() const;
 
@@ -32,14 +33,14 @@ protected:
 
 private:
 
-    void validateNumberOfGears(int num);
+    int validateNumberOfGears(int i_number);
 
 protected:
-    std::string sDrive;
-    std::string sBody;
+    std::string s_Drive;
+    std::string s_Body;
 
 private:
-    int iNumberOfGears;
+    int i_NumberOfGears;
 };
 
 #endif // CAR_H

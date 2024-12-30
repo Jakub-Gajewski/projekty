@@ -1,38 +1,33 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
-#include <iostream>
+#include "icreature.h"
+#include <string>
 
-class Animal{
+class Animal : public ICreature{
 public:
     Animal(
-        const std::string& sName_
-        ,int iAge_
-        ,double dWeight_
-        ,const std::string& sSpecies_
-        ,const std::string& sHabitat_
-        ,const std::string& sDiet_
+        const std::string& s_Name_
+        ,int i_Age_
+        ,double d_WeightInKilograms_
+        ,const std::string& s_Species_
+        ,const std::string& s_Habitat_
+        ,const std::string& s_Diet_
         );
 
     virtual ~Animal();
 
-    virtual void speak() const = 0;
-    virtual void move() = 0;
-    virtual void eat() = 0;
-    virtual void sleep() const = 0;
-    virtual void displayInfo() const = 0;
-
 protected:
-    bool checkAge(const int age);
-    bool checkWeight(const int weight);
+    bool checkAge(const int i_age);
+    bool checkWeight(const int i_weight);
 
 public:
-    std::string sName;
-    int iAge;
-    double dWeight{0.0}; //kilogramy
-    std::string sSpecies;
-    std::string sHabitat;
-    std::string sDiet;
+    std::string s_Name;
+    int i_Age;
+    double d_WeightInKilograms{0.0};
+    std::string s_Species;
+    std::string s_Habitat;
+    std::string s_Diet;
 };
 
 #endif // ANIMAL_H

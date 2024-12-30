@@ -8,13 +8,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(polimorfizm
     animal.cpp
     animal.h
-    dog.cpp
-    dog.h
     bird.cpp
     bird.h
+    dog.cpp
+    dog.h
     fish.cpp
     fish.h
-    main.cpp
+    icreature.h
+    main.cpp  
 )
 
 include(GNUInstallDirs)

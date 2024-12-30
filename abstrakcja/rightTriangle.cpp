@@ -1,62 +1,63 @@
 #include "rightTriangle.h"
+#include <iostream>
 
 RightTriangle::RightTriangle(
-    const double dSide1_
-    ,const double dSide2_
-    ,const double dSide3_
+    const double d_Side1_
+    ,const double d_Side2_
+    ,const double d_Side3_
     )
 {
-    figureName = "Trojkat prostokatny";
-    isPositive(dSide1_, dSide1);
-    isPositive(dSide2_, dSide2);
-    isPositive(dSide3_, dSide3);
+    s_figureName = "Right Triangle";
+    isPositive(d_Side1_, d_Side1);
+    isPositive(d_Side2_, d_Side2);
+    isPositive(d_Side3_, d_Side3);
 
     if (!isRightTriangle())
     {
-        std::cerr << "Bład: Podane boki nie tworza trojkata prostokatnego!" << std::endl;
-        dSide1 = dSide2 = dSide3 = 0;
+        std::cerr << "Error: The given sides do not form a right triangle!" << std::endl;
+        d_Side1 = d_Side2 = d_Side3 = 0;
     }
-    std::cout << "Utworzono trojkat prostokatny" << std::endl;
+    std::cout << "Constructor of a Right Triangle" << std::endl;
 }
 
 RightTriangle::~RightTriangle()
 {
-    std::cout << "Destruktor trojkata" << std::endl;
+    std::cout << "Destructor of a Right Triangle" << std::endl;
 }
 
 void RightTriangle::setSides()
 {
-    std::cout << "Podaj 1 bok: " << std::endl;
-    std::cin >> dSide1;
-    std::cout << "Podaj 2 bok: " << std::endl;
-    std::cin >> dSide2;
-    std::cout << "Podaj 3 bok: " << std::endl;
-    std::cin >> dSide3;
+    std::cout << "Enter 1 side: " << std::endl;
+    std::cin >> d_Side1;
+    std::cout << "Enter 2 side: " << std::endl;
+    std::cin >> d_Side2;
+    std::cout << "Enter 3 side: " << std::endl;
+    std::cin >> d_Side3;
 
     if (!isRightTriangle()) {
-        std::cerr << "Blad: Podane boki nie tworza trojkata!" << std::endl;
+        std::cerr << "Error: The given sides do not form a right triangle!" << std::endl;
     }
 }
 
 void RightTriangle::displaySides() const
 {
-    std::cout << "Bok 1: " << dSide1 << std::endl;
-    std::cout << "Bok 2: " << dSide2 << std::endl;
-    std::cout << "Bok 3: " << dSide3 << std::endl;
+    std::cout << "Side 1: " << d_Side1 << std::endl;
+    std::cout << "Side 2: " << d_Side2 << std::endl;
+    std::cout << "Side 3: " << d_Side3 << std::endl;
 }
 
 double RightTriangle::calculateField()
 {
     if (!isRightTriangle())
     {
-        std::cerr << "Bład: Nie jest to trojkat prostokatny!" << std::endl;
+        std::cerr << "Error: That isn't a right triangle!" << std::endl;
         return 0;
     }
 
-    double base{std::max(dSide1, std::max(dSide2, dSide3))};
-    double height{(dSide1 == base) ? dSide2 : ((dSide2 == base) ? dSide3 : dSide1)};
-    dField = 0.5 * base * height;
-    return dField;
+    double base{std::max(d_Side1, std::max(d_Side2, d_Side3))};
+    double height{(d_Side1 == base) ? d_Side2 : ((d_Side2 == base) ? d_Side3 : d_Side1)};
+    d_Field = 0.5 * base * height;
+    return d_Field;
 }
 
 
@@ -64,19 +65,19 @@ double RightTriangle::calculateCircuit()
 {
     if(isRightTriangle())
     {
-        dCircuit = dSide1 + dSide2 + dSide3;
-        return dCircuit;
+        d_Circuit = d_Side1 + d_Side2 + d_Side3;
+        return d_Circuit;
     }
     else {
         return 0;
-        std::cerr << "Blad: To nie jest trojkat, suma 2 bokow jest mniejsza od trzeciego!" << std::endl;
+        std::cerr << "Error: This is not a triangle; the sum of two sides is less than the third one!" << std::endl;
     }
 }
 
 bool RightTriangle::isRightTriangle() const
 {
-    return (dSide1 * dSide1 + dSide2 * dSide2 == dSide3 * dSide3) ||
-           (dSide1 * dSide1 + dSide3 * dSide3 == dSide2 * dSide2) ||
-           (dSide2 * dSide2 + dSide3 * dSide3 == dSide1 * dSide1);
+    return (d_Side1 * d_Side1 + d_Side2 * d_Side2 == d_Side3 * d_Side3) ||
+           (d_Side1 * d_Side1 + d_Side3 * d_Side3 == d_Side2 * d_Side2) ||
+           (d_Side2 * d_Side2 + d_Side3 * d_Side3 == d_Side1 * d_Side1);
 }
 
