@@ -3,8 +3,22 @@
 #include <iostream>
 
 int main() {
-    AdminAccount admin{"admin", "active", "admin@example.com", "admin123", "admin76", 1};
-    UserAccount user{"personal", "active", "user@example.com", "user123", "userpass", "12345678901234567890"};
+    AdminAccount admin{
+        "admin"
+        ,"active"
+        ,"admin@example.com"
+        ,"admin123"
+        ,"admin76"
+        ,1
+    };
+    UserAccount user{
+        "personal"
+        ,"active"
+        ,"user@example.com"
+        ,"user123"
+        ,"userpass"
+        ,"12345678901234567890"
+    };
 
     std::cout << "\n=== User and Admin Login ===" << std::endl;
     user.logIn("user123", "userpass");

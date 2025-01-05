@@ -10,7 +10,14 @@ Dog::Dog(
     ,const std::string& s_Diet_
     ,const std::string& s_Breed_
     ,bool b_IsAggressive_
-    ) : Animal(s_Name_, i_Age_, d_WeightInKilograms_, s_Species_, s_Habitat_, s_Diet_)
+    ) : Animal{
+            s_Name_
+            ,i_Age_
+            ,d_WeightInKilograms_
+            ,s_Species_
+            ,s_Habitat_
+            ,s_Diet_
+        }
     , s_Breed{s_Breed_}
     , b_IsAggressive{b_IsAggressive_}
 {

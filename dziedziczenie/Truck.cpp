@@ -13,7 +13,16 @@ Truck::Truck(
     ,const int i_NumberOfWheels_
     ,const std::string& s_Cargo_
     ,const float f_CapacityInTons_
-    ) : Car{s_Brand_, s_Model_, i_ProductionYear_, i_Mileage_, i_FuelLevelInPercent_, s_Drive_, s_Body_, i_NumberOfGears_}
+    ) : Car{
+            s_Brand_
+            ,s_Model_
+            ,i_ProductionYear_
+            ,i_Mileage_
+            ,i_FuelLevelInPercent_
+            ,s_Drive_
+            ,s_Body_
+            ,i_NumberOfGears_
+        }
     ,i_NumberOfWheels{i_NumberOfWheels_}
     ,s_Cargo{s_Cargo_}
     ,f_CapacityInTons{f_CapacityInTons_}

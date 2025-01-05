@@ -10,7 +10,14 @@ Bird::Bird(
     ,const std::string& s_Diet_
     ,float f_WingsSpanInCentimeter_
     ,bool b_CanFly_
-    ) : Animal(s_Name_, i_Age_, d_WeightInKilograms_, s_Species_, s_Habitat_, s_Diet_)
+    ) : Animal{
+            s_Name_
+            , i_Age_
+            , d_WeightInKilograms_
+            , s_Species_
+            , s_Habitat_
+            , s_Diet_
+        }
     ,f_WingsSpanInCentimeter{checkWeight(f_WingsSpanInCentimeter_) ? f_WingsSpanInCentimeter_ : 1.0f}
     ,b_CanFly{b_CanFly_}
 {

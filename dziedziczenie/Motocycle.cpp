@@ -9,7 +9,13 @@ Motorcycle::Motorcycle(
     ,const int i_FuelLevelInPercent_
     ,const std::string& s_Type_
     ,const int i_EngineCapacity_
-    ) : Vehicle{s_Brand_, s_Model_, i_ProductionYear_, i_Mileage_, i_FuelLevelInPercent_}
+    ) : Vehicle{
+            s_Brand_
+            ,s_Model_
+            ,i_ProductionYear_
+            ,i_Mileage_
+            ,i_FuelLevelInPercent_
+        }
     ,s_Type{s_Type_}
     ,i_EngineCapacity{i_EngineCapacity_}
 {

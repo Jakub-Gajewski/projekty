@@ -8,7 +8,13 @@ AdminAccount::AdminAccount(
     const std::string& s_Login_,
     const std::string& s_Password_,
     const int i_AdminId_
-    ) : UserAccount{s_AccountType_, s_AccountStatus_, s_Email_, s_Login_, s_Password_, "0"}
+    ) : UserAccount{
+            s_AccountType_
+            ,s_AccountStatus_
+            ,s_Email_
+            ,s_Login_
+            ,s_Password_
+            ,"0"}
     , i_AdminId{i_AdminId_}
 {
     std::cout << "Admin account created" << std::endl;

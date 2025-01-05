@@ -7,9 +7,38 @@
 using namespace std;
 
 int main() {
-    Bird sparrow("Sparrow", 2, 0.05, "Bird", "Forests", "Seeds", 20.0, true);
-    Dog dog("Reksio", 5, 15.0, "Mammals", "Homes", "Meat", "Shepherd", true);
-    Fish goldfish("Goldfish", 1, 0.3, "Fish", "Aquarium", "Aquatic Plants", "Saltwater", "200");
+    Bird sparrow{
+        "Sparrow"
+        ,2
+        ,0.05
+        ,"Bird"
+        ,"Forests"
+        ,"Seeds"
+        ,20.0
+        ,true
+    };
+
+    Dog dog{
+        "Reksio"
+        ,5
+        ,15.0
+        ,"Mammals"
+        ,"Homes"
+        ,"Meat"
+        ,"Shepherd"
+        ,true
+    };
+
+    Fish goldfish{
+        "Goldfish"
+        ,1
+        ,0.3
+        ,"Fish"
+        ,"Aquarium"
+        ,"Aquatic Plants"
+        ,"Saltwater"
+        ,"200"
+    };
 
     std::vector<Animal*> zoo;
     zoo.push_back(&sparrow);

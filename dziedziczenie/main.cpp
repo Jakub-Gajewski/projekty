@@ -6,9 +6,41 @@
 using namespace std;
 
 int main() {
-    Motorcycle motocycle{"Junak", "motocycle5", 50, 2020, 500, "sport", 125};
-    Car car{"Audi", "rs7", 2021, 30000, 60, "4x4", "coupe", 8};
-    Truck truck{"Man", "tgx", 2021, 100000, 39, "4x2", "Tractor-trailer", 12, 4, "Food delivery to the store", 36.4};
+    Motorcycle motocycle{
+         "Junak"
+        ,"motocycle5"
+        ,50
+        ,2020
+        ,500
+        ,"sport"
+        ,125
+    };
+
+    Car car{
+        "Audi"
+        ,"rs7"
+        ,2021
+        ,30000
+        ,60
+        ,"4x4"
+        ,"coupe"
+        ,8
+    };
+
+    Truck truck{
+        "Man"
+        ,"tgx"
+        ,2021
+        ,100000
+        ,39
+        ,"4x2"
+        ,"Tractor-trailer"
+        ,12
+        ,4
+        ,"Food delivery to the store"
+        ,36.4
+    };
+
     cout << endl;
 
     motocycle.setFuelLevel(90);

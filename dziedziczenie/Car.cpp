@@ -10,7 +10,13 @@ Car::Car(
     ,const std::string& s_Drive_
     ,const std::string& s_Body_
     ,const int i_NumberOfGears_
-    ) : Vehicle{s_Brand_, s_Model_, i_ProductionYear_, i_Mileage_, i_FuelLevelInPercent_}
+    ) : Vehicle{
+            s_Brand_
+            ,s_Model_
+            ,i_ProductionYear_
+            ,i_Mileage_
+            ,i_FuelLevelInPercent_
+        }
     ,s_Drive{s_Drive_}
     ,s_Body{s_Body_}
     ,i_NumberOfGears{i_NumberOfGears_}
