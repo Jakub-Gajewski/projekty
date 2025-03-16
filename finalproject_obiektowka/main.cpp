@@ -21,7 +21,7 @@ int main() {
 
     // Przeciążenie operatora +
     RightTriangle triangle3 = triangle1 + triangle2;
-    std::cout << "Triangle 3 (sum of Triangle 1 and Triangle 2):" << std::endl;
+    std::cout << "Triangle 3 (sum of Triangle 1 and Triangle 2)::" << std::endl;
     displayFigure(triangle3);
 
     // Tworzenie prostokąta
